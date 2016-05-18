@@ -1,0 +1,9 @@
+/**
+ * getColor wrapper
+ *
+ * @param  {text} $color-name
+ * @return {color}
+ */
+@function get-color($color-name) {
+   @return egeo-get-color($color-name);
+}
