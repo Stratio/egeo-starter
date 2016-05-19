@@ -1,11 +1,11 @@
 $c-component: $c-print !default;
 
 @mixin component() {
-   box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 @if $c-component {
-   .component {
-      @include component();
-   }
+  .component {
+    @include component();
+  }
 }

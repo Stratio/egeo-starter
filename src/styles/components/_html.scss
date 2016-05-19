@@ -2,8 +2,8 @@ $c-html: $c-print !default;
 
 @if $c-html {
   html {
-     @include egeo-c-app;
-     font-size: $html---base-font-size;
+    @include egeo-c-app;
+    font-size: $html---base-font-size;
   }
   
   body {

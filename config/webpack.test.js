@@ -26,6 +26,11 @@ module.exports = {
 
       },
       {
+        test: /\.json$/,
+        loader: 'json-loader',
+        exclude: [helpers.root('src/index.html')]
+      },
+      {
         test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
         loader: 'null'
       },

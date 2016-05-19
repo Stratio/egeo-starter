@@ -1,14 +1,13 @@
 {
-  "name": "angular2-scaffolding",
+  "name": "angular2-architecture",
   "version": "1.0.0",
-  "description": "An Angular 2 scaffolding using Webpack, Typescript, Sass, Jasmine and Karma",
+  "description": "Architecture proposal for Angular 2.x projects",
   "scripts": {
     "start": "webpack-dev-server --inline --progress --port 8080",
     "test": "karma start",
     "build": "rm -rf dist && webpack --config config/webpack.prod.js --progress --profile --bail",
     "postinstall": "typings install"
   },
-  "license": "MIT",
   "dependencies": {
     "@angular/common": "2.0.0-rc.1",
     "@angular/compiler": "2.0.0-rc.1",
@@ -41,7 +40,9 @@
     "null-loader": "0.1.1",
     "phantomjs-prebuilt": "2.1.7",
     "raw-loader": "0.5.1",
+    "sass-lint": "^1.7.0",
     "sass-loader": "3.2.0",
+    "sasslint-webpack-plugin": "1.0.3",
     "style-loader": "0.13.1",
     "ts-loader": "0.8.2",
     "tslint": "3.10.2",

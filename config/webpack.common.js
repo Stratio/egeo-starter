@@ -2,6 +2,7 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var helpers = require('./helpers');
+var SassLintPlugin = require('sasslint-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -47,10 +48,12 @@ module.exports = {
   },
 
   plugins: [
+    new SassLintPlugin({
+      glob: 'src/**/*.scss'
+    }),
     new webpack.optimize.CommonsChunkPlugin({
       name: ['app', 'vendor', 'polyfills']
     }),
-
     new HtmlWebpackPlugin({
       template: 'src/index.html'
     })

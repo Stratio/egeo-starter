@@ -34,7 +34,7 @@ rules:
     - convention: hyphenatedbem
   indentation:
     - 1
-    - size: 3
+    - size: 2
   leading-zero: 1
   mixin-name-format: 1
   mixins-before-declarations:
