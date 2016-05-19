@@ -3,3 +3,7 @@ dist/
 node_modules/
 target/
 typings/
+
+# OS metadata
+.DS_Store
+Thumbs.db
