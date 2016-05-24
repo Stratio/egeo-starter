@@ -7,4 +7,6 @@ import '@angular/http';
 import '@angular/router-deprecated';
 // RxJS
 import 'rxjs';
+
 // You can import js, ts, css, sass, ...
+import '../node_modules/bootstrap/dist/css/bootstrap.css';

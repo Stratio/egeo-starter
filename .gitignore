@@ -3,6 +3,7 @@ dist/
 node_modules/
 target/
 typings/
+.idea/
 
 # OS metadata
 .DS_Store
