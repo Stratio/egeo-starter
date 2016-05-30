@@ -15,7 +15,7 @@ describe('App', () => {
     AppComponent,
     HTTP_PROVIDERS,
     provide(TranslateLoader, {
-      useFactory: (http: Http) => new TranslateStaticLoader(http, '/src/assets/langs', '.json'),
+      useFactory: (http: Http): any => new TranslateStaticLoader(http, '/src/assets/langs', '.json'),
       deps: [Http]
     }),
     TranslateService

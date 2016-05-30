@@ -6,7 +6,10 @@
     "start": "webpack-dev-server --inline --progress --port 8080",
     "test": "karma start",
     "build": "rm -rf dist && webpack --config config/webpack.prod.js --progress --profile --bail",
-    "postinstall": "typings install"
+    "postinstall": "typings install",
+    "tslint": "tslint \"./src/**/*.ts\"",
+    "sass-lint": "sass-lint --verbose",
+    "lint": "npm run sass-lint && npm run tslint"
   },
   "dependencies": {
     "@angular/common": "2.0.0-rc.1",
@@ -41,7 +44,7 @@
     "null-loader": "0.1.1",
     "phantomjs-prebuilt": "2.1.7",
     "raw-loader": "0.5.1",
-    "sass-lint": "^1.7.0",
+    "sass-lint": "1.7.0",
     "sass-loader": "3.2.0",
     "sasslint-webpack-plugin": "1.0.3",
     "style-loader": "0.13.1",

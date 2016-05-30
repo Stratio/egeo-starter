@@ -2,7 +2,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { TranslateService, TranslatePipe } from 'ng2-translate/ng2-translate';
 
 @Component({
-  selector: 'app',
+  selector: 'st-app',
   template: require('./app.component.html'),
   styles: [require('./app.component.scss')],
   pipes: [TranslatePipe],

@@ -2,12 +2,12 @@ $c-html: $c-print !default;
 
 @if $c-html {
   html {
-    @include egeo-c-app;
     font-size: $html---base-font-size;
   }
-  
+
   body {
-    background: #0147A7;
-    color: #fff;
+    @include egeo-c-app;
+    background: $body---background;
+    color: $body---color;
   }
 }
