@@ -14,7 +14,12 @@
     "no-inferrable-types": false,
     "no-internal-module": true,
     "no-var-requires": false,
-    "typedef": false,
+    "typedef": [
+      true,
+      "call-signature",
+      "parameter",
+      "member-variable-declaration"
+    ],
     "typedef-whitespace": [
       true,
       {
@@ -138,8 +143,8 @@
     "component-selector-name": [true, "kebab-case"],
     "directive-selector-type": [true, "attribute"],
     "component-selector-type": [true, "element"],
-    "directive-selector-prefix": [true, "sg"],
-    "component-selector-prefix": [true, "sg"],
+    "directive-selector-prefix": [true, "st"],
+    "component-selector-prefix": [true, "st"],
     "use-input-property-decorator": true,
     "use-output-property-decorator": true,
     "use-host-property-decorator": true,
@@ -149,7 +154,7 @@
     "no-forward-ref" :true,
     "use-life-cycle-interface": true,
     "use-pipe-transform-interface": true,
-    "pipe-naming": [true, "camelCase", "sg"],
+    "pipe-naming": [true, "camelCase", "st"],
     "component-class-suffix": true,
     "directive-class-suffix": true
   }
