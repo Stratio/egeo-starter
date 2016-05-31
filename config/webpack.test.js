@@ -21,6 +21,10 @@ module.exports = {
         loader: 'ts'
       },
       {
+        test: /\.json$/,
+        loader: 'json-loader'
+      },
+      {
         test: /\.html$/,
         loader: 'html'
 
