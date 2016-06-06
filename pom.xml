@@ -56,6 +56,16 @@
             </configuration>
           </execution>
           <execution>
+            <id>typings postinstall</id>
+            <goals>
+              <goal>npm</goal>
+            </goals>
+            <phase>generate-sources</phase>
+            <configuration>
+              <arguments>run-script postinstall</arguments>
+            </configuration>
+          </execution>
+          <execution>
             <id>webpack build</id>
             <goals>
               <goal>webpack</goal>
