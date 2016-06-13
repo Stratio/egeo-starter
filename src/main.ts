@@ -11,7 +11,7 @@ if (process.env.ENV === 'production') {
 bootstrap(AppComponent, [
   HTTP_PROVIDERS,
   provide(TranslateLoader, {
-    useFactory: (http: Http): any => new TranslateStaticLoader(http, '/src/assets/langs', '.json'),
+    useFactory: (http: Http): any => new TranslateStaticLoader(http, '/assets/langs', '.json'),
     deps: [Http]
   }),
   TranslateService

@@ -1,9 +1,17 @@
 dist/
 .tmp/
-node_modules/
 target/
 typings/
+*.sh
+
+# Node
+node_modules/
+npm-debug.log
+.npmrc
 
 # OS metadata
 .DS_Store
 Thumbs.db
+
+# Karma
+coverage/
