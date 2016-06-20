@@ -60,10 +60,10 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin({
       name: ['app', 'vendor', 'polyfills']
     }),
-    new CopyWebpackPlugin([{
-      from: 'src/assets',
-      to: 'assets'
-    }]),
+    new CopyWebpackPlugin([
+      {from: 'src/assets',to: 'assets'},
+      {from: 'node_modules/egeo.ui.base/src/vendors/fonts',to: 'assets/fonts'}
+      ]),
     new HtmlWebpackPlugin({
       template: 'src/index.html'
     })
