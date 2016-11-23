@@ -1,7 +1,6 @@
 dist/
 .tmp/
 target/
-typings/
 *.sh
 
 # Node
