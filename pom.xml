@@ -74,13 +74,13 @@
                   </configuration>
                </execution>
                <execution>
-                  <id>webpack build</id>
+                  <id>npm build</id>
                   <goals>
-                     <goal>webpack</goal>
+                     <goal>npm</goal>
                   </goals>
                   <phase>compile</phase>
                   <configuration>
-                     <arguments>--config config/webpack.prod.js --profile --bail</arguments>
+                     <arguments>run-script build</arguments>
                   </configuration>
                </execution>
                <execution>
