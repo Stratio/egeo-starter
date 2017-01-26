@@ -10,7 +10,7 @@
    },
    "scripts": {
       "build": "cross-env NODE_ENV=production rimraf dist && webpack --progress --profile --bail",
-      "replace": "json -I -f package.json -e",
+      "replace": "json -f package.json",
       "start": "cross-env NODE_ENV=development webpack-dev-server --inline --progress",
       "test": "cross-env NODE_ENV=test karma start",
       "test:watch": "cross-env NODE_ENV=test karma start --auto-watch --no-single-run"
