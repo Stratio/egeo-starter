@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { TranslateModule } from 'ng2-translate/ng2-translate';
 import { EgeoModule } from 'egeo/egeo';
 
 import { AppComponent } from './app.component';
@@ -11,7 +12,8 @@ import { AppComponent } from './app.component';
    ],
    imports: [
       BrowserModule,
-      EgeoModule.forRoot()
+      EgeoModule.forRoot(),
+      TranslateModule.forRoot()
    ]
 })
 
