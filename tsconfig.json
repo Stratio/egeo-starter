@@ -1,7 +1,4 @@
 {
-   "atom": {
-      "rewriteTsconfig": false
-   },
    "buildOnSave": false,
    "compileOnSave": false,
    "compilerOptions": {
@@ -11,11 +8,15 @@
       "module": "commonjs",
       "moduleResolution": "node",
       "noImplicitAny": true,
+      "paths": {
+         "@starter/*": [ "app/modules/*" ]
+      },
       "pretty": true,
       "removeComments": false,
       "skipLibCheck": true,
       "sourceMap": true,
       "strictNullChecks": true,
+      "suppressImplicitAnyIndexErrors": true,
       "target": "es5"
    },
    "exclude": [

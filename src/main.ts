@@ -1,18 +1,4 @@
-import { bootstrap } from '@angular/platform-browser-dynamic';
-import { Component, Injectable, provide, enableProdMode } from '@angular/core';
-import { AppComponent } from './app/app.component';
-import { HTTP_PROVIDERS, Http } from '@angular/http';
-import { TranslateService, TranslateLoader, TranslateStaticLoader} from 'ng2-translate/ng2-translate';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { AppModule } from './app/app.module';
 
-if (process.env.ENV === 'production') {
-  enableProdMode();
-}
-
-bootstrap(AppComponent, [
-  HTTP_PROVIDERS,
-  provide(TranslateLoader, {
-    useFactory: (http: Http): any => new TranslateStaticLoader(http, '/assets/langs', '.json'),
-    deps: [Http]
-  }),
-  TranslateService
-]);
+platformBrowserDynamic().bootstrapModule(AppModule);

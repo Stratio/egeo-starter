@@ -1,4 +1,4 @@
-import {
+/*import {
   it,
   inject,
   describe,
@@ -26,3 +26,4 @@ describe('App', () => {
     expect(2).toBe(2);
   });
 });
+*/

@@ -3,12 +3,12 @@
 hose {
    EMAIL = 'egeo'
    MODULE = 'egeo-starter'
-   DEVTIMEOUT = 30
-   RELEASETIMEOUT = 30
    REPOSITORY = 'egeo-starter'
 
-   DEV = { config ->
+   DEVTIMEOUT = 30
+   RELEASETIMEOUT = 30
 
+   DEV = { config ->
       doCompile(config)
       doUT(config)
       doDeploy(config)

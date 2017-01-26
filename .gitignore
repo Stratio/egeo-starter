@@ -1,9 +1,13 @@
+# IDEs
+.history/
+.idea/
+.vscode/
+
+# dist
 dist/
-.tmp/
-target/
-*.sh
 
 # Node
+node/
 node_modules/
 npm-debug.log
 .npmrc
@@ -11,6 +15,11 @@ npm-debug.log
 # OS metadata
 .DS_Store
 Thumbs.db
+
+# Node
+node_modules/
+npm-debug.log
+.npmrc
 
 # Karma
 coverage/
