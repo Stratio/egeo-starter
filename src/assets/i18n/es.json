@@ -1,5 +1,9 @@
 {
+   "ERRORS": {
+      "404": "404: Página no encontrada"
+   },
    "GLOBAL": {
       "GREETINGS": "Hola Mundo!"
    }
+
 }

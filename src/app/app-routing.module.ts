@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { PageNotFoundComponent } from '@starter/shared';
+import { Error404Component } from "@starter/errors";
 
 const appRoutes:Routes = [
    {
@@ -15,7 +15,7 @@ const appRoutes:Routes = [
    },
    {
       path: '**',
-      component: PageNotFoundComponent
+      component: Error404Component
    }
 ];
 
