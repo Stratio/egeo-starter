@@ -26,6 +26,7 @@
       "@angular/router": "3.4.3",
       "core-js": "2.4.1",
       "egeo": "0.6.0-SNAPSHOT",
+      "ng2-translate": "5.0.0",
       "reflect-metadata": "0.1.9",
       "rxjs": "5.0.3",
       "ui-base": "0.1.0",

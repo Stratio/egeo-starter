@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { TranslateModule } from 'ng2-translate/ng2-translate';
+import { TranslateModule } from 'ng2-translate';
 import { EgeoModule } from 'egeo/egeo';
 
-import { AppComponent } from './app.component';
+import { AppComponent, AppRoutingModule, TRANSLATE_CONFIG } from '.';
+import { SharedModule } from '@starter/shared';
 
 @NgModule({
    bootstrap: [ AppComponent ],
@@ -11,9 +12,14 @@ import { AppComponent } from './app.component';
       AppComponent
    ],
    imports: [
+      AppRoutingModule,
       BrowserModule,
       EgeoModule.forRoot(),
-      TranslateModule.forRoot()
+      TranslateModule.forRoot(TRANSLATE_CONFIG),
+      SharedModule
+   ],
+   exports: [
+      SharedModule
    ]
 })
 
