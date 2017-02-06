@@ -5,7 +5,7 @@ import { EgeoModule } from 'egeo/egeo';
 
 import { AppComponent, AppRoutingModule, TRANSLATE_CONFIG } from '.';
 import { SharedModule } from '@starter/shared';
-import { ErrorsModule } from "@starter/errors/errors.module";
+import { ErrorsModule } from '@starter/errors';
 
 @NgModule({
    bootstrap: [ AppComponent ],
