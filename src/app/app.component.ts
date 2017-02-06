@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { TranslateService } from "ng2-translate";
+import { TranslateService } from 'ng2-translate';
 
 @Component({
    encapsulation: ViewEncapsulation.None,
@@ -9,8 +9,8 @@ import { TranslateService } from "ng2-translate";
 })
 
 export class AppComponent {
-   constructor(translate: TranslateService) {
-      let userLang: string = navigator.language.split('-')[0];
+   constructor(translate:TranslateService) {
+      let userLang:string = navigator.language.split('-')[0];
       userLang = /(es|en)/gi.test(userLang) ? userLang : 'en';
       translate.setDefaultLang('en');
       translate.use(userLang);
