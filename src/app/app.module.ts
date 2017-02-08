@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { TranslateModule } from 'ng2-translate';
-import { EgeoModule } from 'egeo/egeo';
+import { EgeoModule } from 'egeo';
 
 import { AppComponent, AppRoutingModule, TRANSLATE_CONFIG } from '.';
 import { SharedModule } from '@starter/shared';

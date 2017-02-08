@@ -1,6 +1,6 @@
 import { Component, ChangeDetectorRef } from '@angular/core';
 
-import { StHeaderModel } from 'egeo/egeo';
+import { StHeaderModel, StFooterLink } from 'egeo';
 
 @Component({
    selector: 'layout',
@@ -10,19 +10,34 @@ import { StHeaderModel } from 'egeo/egeo';
 
 export class LayoutComponent {
 
-   public menu: Array<StHeaderModel> = [
-      {
-         icon: 'icon-book1',
-         label: 'BROWSER',
-         link: '/browser',
-         subMenus: [],
-         isActive: true
-      }
-   ];
+   public contentOffset: number;
+   public menu: Array<StHeaderModel>;
+   public rightsText: string;
+   public links: Array<StFooterLink>;
 
-   private contentOffset: number = 0;
-
-   constructor(private _cd: ChangeDetectorRef) { }
+   constructor(private _cd: ChangeDetectorRef) {
+      this.contentOffset = 0;
+      this.rightsText = '© Stratio Big Data Inc. All Rights Reserved';
+      this.menu = [
+         {
+            icon: 'icon-rocket',
+            label: 'EXAMPLE',
+            link: '/example',
+            subMenus: [],
+            isActive: true
+         }
+      ];
+      this.links = [
+         {
+            title: 'Egeo repository',
+            url: 'https://bitbucket.org/stratio/egeo/overview'
+         },
+         {
+            title: 'Egeo doc',
+            url: 'http://stratiodocs.s3-website-us-east-1.amazonaws.com/egeo/1.0.0-SNAPSHOT'
+         }
+      ];
+   }
 
    public onContentChangeOffset(offset: number): void {
       this.contentOffset = offset + 10;
