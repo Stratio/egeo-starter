@@ -48,7 +48,6 @@ export class LayoutComponent {
 
    public onContentChangeOffset(offset: number): void {
       this.contentOffset = offset + 20;
-      console.log("this.contentOffset", this.contentOffset);
       setTimeout(() => {
          this._cd.markForCheck();
       });
