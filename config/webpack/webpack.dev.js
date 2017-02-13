@@ -7,7 +7,7 @@ const LoaderOptionsPlugin = require('webpack/lib/LoaderOptionsPlugin');
 const METADATA = {
    env: 'development',
    host: process.env.HOST || 'localhost',
-   port: process.env.PORT || 8080
+   port: process.env.PORT || 3000
 };
 
 var config = {

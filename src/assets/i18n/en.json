@@ -3,6 +3,8 @@
       "404": "404: Page missing"
    },
    "GLOBAL": {
-      "GREETINGS": "Hello World!"
+      "EXAMPLES": "Examples",
+      "GREETINGS": "Hello World!",
+      "RESOURCES": "Resources"
    }
 }
