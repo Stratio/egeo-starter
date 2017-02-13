@@ -8,4 +8,6 @@ import '@angular/router';
 
 import 'rxjs';
 
-import 'ui-fonts/fonts.css';
+// Global styles
+import 'egeo-theme/egeo-theme-stratio.css';
+import 'flexboxgrid/css/flexboxgrid.css';

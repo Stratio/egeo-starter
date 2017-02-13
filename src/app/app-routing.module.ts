@@ -6,12 +6,7 @@ import { Error404Component } from "@starter/errors";
 const appRoutes:Routes = [
    {
       path: '',
-      pathMatch: 'full',
-      redirectTo: '/example'
-   },
-   {
-      path: 'example',
-      loadChildren: './modules/example/example.module#ExampleModule'
+      loadChildren: './modules/layout/layout.module#LayoutModule'
    },
    {
       path: '**',
