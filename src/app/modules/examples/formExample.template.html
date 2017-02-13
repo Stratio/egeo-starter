@@ -1,0 +1,51 @@
+<section class="container-liquid">
+   <form [formGroup]="reactiveForm"
+         novalidate
+         autocomplete="off"
+         (ngSubmit)="onSubmitReactiveForm()">
+      <div class="form-group">
+         <st-input label="Description"
+                   placeholder="Module description"
+                   [forceValidations]="forceValidations"
+                   [errors]="errors"
+                   name="description"
+                   qaTag="description-input"
+                   contextualHelp="This is the contextual help of the description"
+                   formControlName="description">
+         </st-input>
+
+         <st-input label="Components"
+                   placeholder="Number of components"
+                   [forceValidations]="forceValidations"
+                   [errors]="errors"
+                   name="components-reactive"
+                   qaTag="components-input-reactive"
+                   contextualHelp="This is the contextual help of the components"
+                   formControlName="components">
+         </st-input>
+      </div>
+      <st-button inputType="submit" text="Submit" qaTag="button-submit" leftIcon="icon-circle-check"></st-button>
+      <br><br>
+      <div *ngIf="reactiveForm.valid">
+         Form status: VALID
+      </div>
+      <div *ngIf="!reactiveForm.valid">
+         Form status: INVALID
+      </div>
+   </form>
+
+   <st-button inputType="button"
+              subtypeClass="subtype3"
+              text="Force validations"
+              qaTag="button-validate"
+              leftIcon="icon-circle-check"
+              (onClick)="forceValidation()">
+   </st-button>
+   <st-button inputType="button"
+              subtypeClass="subtype2"
+              text="Change disable status"
+              qaTag="button-disable"
+              leftIcon="icon-circle-check"
+              (onClick)="changeDisabled()">
+   </st-button>
+</section>

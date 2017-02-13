@@ -9,10 +9,6 @@ const appRoutes:Routes = [
       loadChildren: './modules/layout/layout.module#LayoutModule'
    },
    {
-      path: 'example',
-      loadChildren: './modules/example/example.module#ExampleModule'
-   },
-   {
       path: '**',
       component: Error404Component
    }

@@ -6,7 +6,21 @@ import { LayoutComponent } from '.';
 const layoutRoutes:Routes = [
    {
       path: '',
-      component: LayoutComponent
+      component: LayoutComponent,
+      children: [
+         {
+            path: '',
+            redirectTo: 'resources'
+         },
+         {
+            path: 'resources',
+            loadChildren: '../../modules/resources/resources.module#ResourcesModule'
+         },
+         {
+            path: 'examples',
+            loadChildren: '../../modules/examples/examples.module#ExamplesModule'
+         }
+      ]
    }
 ];
 

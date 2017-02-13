@@ -3,8 +3,9 @@
 const appModules = {
    '@starter/core': 'app/modules/core',
    '@starter/errors': 'app/modules/errors',
-   '@starter/example': 'app/modules/example',
+   '@starter/example': 'app/modules/examples',
    '@starter/layout': 'app/modules/layout',
+   '@starter/resources': 'app/modules/resources',
    '@starter/shared': 'app/modules/shared'
 };
 

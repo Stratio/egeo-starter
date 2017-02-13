@@ -3,7 +3,9 @@
       "404": "404: Página no encontrada"
    },
    "GLOBAL": {
-      "GREETINGS": "Hola Mundo!"
+      "EXAMPLES": "Ejemplos",
+      "GREETINGS": "Hola Mundo!",
+      "RESOURCES": "Recursos"
    }
 
 }

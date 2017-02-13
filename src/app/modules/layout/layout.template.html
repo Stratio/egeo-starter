@@ -1,12 +1,14 @@
-<st-header appName="Egeo Starter" [menu]="menu"
-           qaTag="st-header"
-           (contentChangeOffset)="onContentChangeOffset($event)"
-           stHeaderBehavior>
-</st-header>
-<div class="container-fluid" [ngStyle]="{'padding-top': contentOffset + 'px'}">
-   <div class="content">
-      <router-outlet></router-outlet>
+<div class="main">
+   <st-header appName="Egeo Starter"
+              [menu]="menu"
+              qaTag="st-header"
+              (contentChangeOffset)="onContentChangeOffset($event)"
+              stHeaderBehavior>
+   </st-header>
+   <div class="container-fluid" [ngStyle]="{'padding-top': contentOffset + 'px'}">
+      <div class="content">
+         <router-outlet></router-outlet>
+      </div>
    </div>
+   <st-footer [rightsText]="rightsText" [links]="links" [image]="image" qaTag="st-footer"></st-footer>
 </div>
-
-<st-footer [rightsText]="rightsText" [links]="links" [image]="image" qaTag="st-footer"></st-footer>

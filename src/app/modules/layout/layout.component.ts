@@ -20,9 +20,16 @@ export class LayoutComponent {
       this.rightsText = '© Stratio Big Data Inc. All Rights Reserved';
       this.menu = [
          {
+            icon: 'icon-link',
+            label: 'RESOURCES',
+            link: '/resources',
+            subMenus: [],
+            isActive: true
+         },
+         {
             icon: 'icon-rocket',
-            label: 'EXAMPLE',
-            link: '/example',
+            label: 'EXAMPLES',
+            link: '/examples',
             subMenus: [],
             isActive: true
          }
@@ -40,7 +47,8 @@ export class LayoutComponent {
    }
 
    public onContentChangeOffset(offset: number): void {
-      this.contentOffset = offset + 10;
+      this.contentOffset = offset + 20;
+      console.log("this.contentOffset", this.contentOffset);
       setTimeout(() => {
          this._cd.markForCheck();
       });
