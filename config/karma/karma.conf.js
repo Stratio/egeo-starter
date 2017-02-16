@@ -1,6 +1,6 @@
-const webpack = require('webpack');
-
 module.exports = function (config) {
+   var webpack = require('../webpack/webpack.test.js');
+
    var configuration = {
       autoWatch: false,
       basePath: '',
@@ -21,7 +21,7 @@ module.exports = function (config) {
       port: 9876,
       reporters: ['progress'],
       singleRun: true,
-      webpack: webpack.config,
+      webpack: webpack,
       webpackMiddleware: { stats: 'errors-only' }
    };
 
