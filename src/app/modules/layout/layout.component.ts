@@ -37,11 +37,11 @@ export class LayoutComponent {
       this.links = [
          {
             title: 'Egeo repository',
-            url: 'https://bitbucket.org/stratio/egeo/overview'
+            url: 'https://github.com/Stratio/egeo'
          },
          {
             title: 'Egeo doc',
-            url: 'http://stratiodocs.s3-website-us-east-1.amazonaws.com/egeo/1.0.0-SNAPSHOT'
+            url: 'http://stratiodocs.s3-website-us-east-1.amazonaws.com/egeo/1.0.0-RC1'
          }
       ];
    }
