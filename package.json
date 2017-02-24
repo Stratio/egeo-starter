@@ -25,7 +25,7 @@
       "@angular/platform-browser-dynamic": "2.4.8",
       "@angular/router": "3.4.8",
       "core-js": "2.4.1",
-      "egeo": "1.0.0-RC1",
+      "egeo": "1.0.0",
       "egeo-theme": "0.3.0",
       "egeo-ui-base": "0.4.0",
       "flexboxgrid": "6.3.1",
