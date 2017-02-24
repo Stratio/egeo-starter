@@ -41,7 +41,7 @@ export class LayoutComponent {
          },
          {
             title: 'Egeo doc',
-            url: 'http://stratiodocs.s3-website-us-east-1.amazonaws.com/egeo/1.0.0-RC1'
+            url: 'http://stratiodocs.s3-website-us-east-1.amazonaws.com/egeo/1.0.0'
          }
       ];
    }

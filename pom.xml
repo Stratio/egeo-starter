@@ -17,7 +17,7 @@
    <packaging>pom</packaging>
 
    <properties>
-      <nodeVer>v6.0.0</nodeVer>
+      <nodeVer>v6.9.2</nodeVer>
       <npmVer>3.8.8</npmVer>
       <nodeURL>http://tools.stratio.com/buildtools</nodeURL>
    </properties>
