@@ -1,0 +1,8 @@
+#!/bin/sh
+
+echo "Starting nginx... Egeo Starter should running on port 8080"
+
+nginx
+
+echo "Pulling log"
+tail -f  /var/log/nginx/access.log
