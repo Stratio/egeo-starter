@@ -1,8 +1,8 @@
-# angular2-architecture
-Architecture proposal for Angular 2.x projects using TypeScript, Webpack, Karma, Jasmine and Sass.
+# Egeo Starter
+Architecture proposal for Angular 2.x projects using Egeo, TypeScript, Webpack, Karma, Jasmine and Sass.
 
 ## Run or compile the project
-Serve the project on `http://localhost:8080/` and watch changes.
+Serve the project on `http://localhost:3000/` and watch changes.
 ```
 npm start
 ```

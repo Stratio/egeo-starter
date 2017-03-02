@@ -1,16 +1,26 @@
 {
-  "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "sourceMap": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "removeComments": false,
-    "noImplicitAny": true,
-    "suppressImplicitAnyIndexErrors": true
-  },
-  "exclude": [
-    "node_modules"
-  ]
+   "buildOnSave": false,
+   "compileOnSave": false,
+   "compilerOptions": {
+      "baseUrl": "./src",
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "noImplicitAny": true,
+      "paths": {
+         "@starter/*": [ "app/modules/*" ]
+      },
+      "pretty": true,
+      "removeComments": false,
+      "skipLibCheck": true,
+      "sourceMap": true,
+      "strictNullChecks": true,
+      "suppressImplicitAnyIndexErrors": true,
+      "target": "es5"
+   },
+   "exclude": [
+      "dist",
+      "node_modules"
+   ]
 }

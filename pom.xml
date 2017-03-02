@@ -1,113 +1,122 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>com.stratio</groupId>
-    <artifactId>parent</artifactId>
-    <version>0.7.0</version>
-  </parent>
+   <modelVersion>4.0.0</modelVersion>
+   <parent>
+      <groupId>com.stratio</groupId>
+      <artifactId>parent</artifactId>
+      <version>0.8.2</version>
+   </parent>
 
-  <groupId>com.stratio.paas</groupId>
-  <artifactId>angular2-architecture</artifactId>
-  <version>0.1.0-SNAPSHOT</version>
+   <groupId>com.stratio.egeo.starter</groupId>
+   <artifactId>egeo-starter</artifactId>
+   <version>0.1.0-SNAPSHOT</version>
 
-  <name>Stratio Angular2 Architecture</name>
+   <name>Stratio Egeo Starter</name>
+   <description>Stratio Egeo starter for angular2, typescript and webpack project</description>
+   <inceptionYear>2016</inceptionYear>
+   <packaging>pom</packaging>
 
-  <inceptionYear>2016</inceptionYear>
+   <properties>
+      <nodeVer>v6.9.2</nodeVer>
+      <npmVer>3.8.8</npmVer>
+      <nodeURL>http://tools.stratio.com/buildtools</nodeURL>
+   </properties>
 
-  <properties>
-    <nodeVer>v6.0.0</nodeVer>
-    <npmVer>3.8.8</npmVer>
-    <nodeURL>http://tools.stratio.com/buildtools</nodeURL>
-  </properties>
-
-  <build>
-    <sourceDirectory>src</sourceDirectory>
-    <testSourceDirectory>src</testSourceDirectory>
-    <plugins>
-      <plugin>
-        <groupId>com.github.eirslett</groupId>
-        <artifactId>frontend-maven-plugin</artifactId>
-        <version>1.0</version>
-        <executions>
-          <execution>
-            <id>install node and npm</id>
-            <goals>
-              <goal>install-node-and-npm</goal>
-            </goals>
-            <phase>validate</phase>
+   <build>
+      <sourceDirectory>src</sourceDirectory>
+      <testSourceDirectory>src</testSourceDirectory>
+      <plugins>
+         <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-deploy-plugin</artifactId>
             <configuration>
-              <nodeVersion>${nodeVer}</nodeVersion>
-              <npmVersion>${npmVer}</npmVersion>
-              <nodeDownloadRoot>${customnodeDownloadRoot}</nodeDownloadRoot>
-              <npmDownloadRoot>${customnpmDownloadRoot}</npmDownloadRoot>
-              <skip.installnodenpm>${skip.installnodenpm}</skip.installnodenpm>
+               <skip>true</skip>
             </configuration>
-          </execution>
-          <execution>
-            <id>npm install</id>
-            <goals>
-              <goal>npm</goal>
-            </goals>
-            <phase>generate-sources</phase>
-            <configuration>
-              <npmRegistryURL>${customnpmRegistryURL}</npmRegistryURL>
-              <arguments>install --no-optional</arguments>
-            </configuration>
-          </execution>
-          <execution>
-            <id>typings postinstall</id>
-            <goals>
-              <goal>npm</goal>
-            </goals>
-            <phase>generate-sources</phase>
-            <configuration>
-              <arguments>run-script postinstall</arguments>
-            </configuration>
-          </execution>
-          <execution>
-            <id>webpack build</id>
-            <goals>
-              <goal>webpack</goal>
-            </goals>
-            <phase>compile</phase>
-            <configuration>
-              <arguments>--config config/webpack.prod.js --progress --profile --bail</arguments>
-            </configuration>
-          </execution>
-          <execution>
-            <id>karma test</id>
-            <goals>
-              <goal>karma</goal>
-            </goals>
-            <phase>test</phase>
-            <configuration>
-              <skipTests>${skipUTs}</skipTests>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jar-plugin</artifactId>
-        <version>2.5</version>
-        <configuration>
-          <excludes>
-            <exclude>**/*.jar</exclude>
-          </excludes>
-          <classesDirectory>dist</classesDirectory>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
-  <profiles>
-    <profile>
-      <id>node</id>
-      <properties>
-        <customnodeDownloadRoot>${nodeURL}/node/</customnodeDownloadRoot>
-        <customnpmDownloadRoot>${nodeURL}/npm/${npmVer}/</customnpmDownloadRoot>
-        <customnpmRegistryURL>http://sodio.stratio.com/nexus/content/groups/publicnpm/</customnpmRegistryURL>
-      </properties>
-    </profile>
-  </profiles>
+         </plugin>
+         <plugin>
+            <groupId>com.github.eirslett</groupId>
+            <artifactId>frontend-maven-plugin</artifactId>
+            <version>1.3</version>
+            <executions>
+               <execution>
+                  <id>install node and npm</id>
+                  <goals>
+                     <goal>install-node-and-npm</goal>
+                  </goals>
+                  <phase>validate</phase>
+                  <configuration>
+                     <nodeVersion>${nodeVer}</nodeVersion>
+                     <npmVersion>${npmVer}</npmVersion>
+                     <nodeDownloadRoot>${customnodeDownloadRoot}</nodeDownloadRoot>
+                     <npmDownloadRoot>${customnpmDownloadRoot}</npmDownloadRoot>
+                     <skip.installnodenpm>${skip.installnodenpm}</skip.installnodenpm>
+                  </configuration>
+               </execution>
+               <execution>
+                  <id>npm install</id>
+                  <goals>
+                     <goal>npm</goal>
+                  </goals>
+                  <phase>generate-sources</phase>
+                  <configuration>
+                     <npmRegistryURL>${customnpmRegistryURL}</npmRegistryURL>
+                     <arguments>install --no-optional --loglevel=error --depth=0</arguments>
+                  </configuration>
+               </execution>
+               <execution>
+                  <id>replace version</id>
+                  <goals>
+                     <goal>npm</goal>
+                  </goals>
+                  <phase>generate-sources</phase>
+                  <configuration>
+                     <arguments>run-script replace -- this.version="${VERSION}"</arguments>
+                  </configuration>
+               </execution>
+               <execution>
+                  <id>npm build</id>
+                  <goals>
+                     <goal>npm</goal>
+                  </goals>
+                  <phase>compile</phase>
+                  <configuration>
+                     <arguments>run-script build</arguments>
+                  </configuration>
+               </execution>
+               <execution>
+                  <id>npm test</id>
+                  <goals>
+                     <goal>npm</goal>
+                  </goals>
+                  <phase>test</phase>
+                  <configuration>
+                     <skipTests>${skipUTs}</skipTests>
+                     <arguments>run-script test</arguments>
+                  </configuration>
+               </execution>
+               <execution>
+                  <id>npm publish</id>
+                  <goals>
+                     <goal>npm</goal>
+                  </goals>
+                  <phase>deploy</phase>
+                  <configuration>
+                     <npmRegistryURL>http://sodio.stratio.com/nexus/content/repositories/strationpmjs</npmRegistryURL>
+                     <arguments>publish</arguments>
+                  </configuration>
+               </execution>
+            </executions>
+         </plugin>
+      </plugins>
+   </build>
+   <profiles>
+      <profile>
+         <id>node</id>
+         <properties>
+            <customnodeDownloadRoot>${nodeURL}/node/</customnodeDownloadRoot>
+            <customnpmDownloadRoot>${nodeURL}/npm/${npmVer}/</customnpmDownloadRoot>
+            <customnpmRegistryURL>http://sodio.stratio.com/nexus/content/groups/publicnpm/</customnpmRegistryURL>
+         </properties>
+      </profile>
+   </profiles>
 </project>

@@ -1,0 +1,11 @@
+{
+   "ERRORS": {
+      "404": "404: Página no encontrada"
+   },
+   "GLOBAL": {
+      "EXAMPLES": "Ejemplos",
+      "GREETINGS": "Hola Mundo!",
+      "RESOURCES": "Recursos"
+   }
+
+}
