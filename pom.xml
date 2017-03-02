@@ -4,7 +4,7 @@
    <parent>
       <groupId>com.stratio</groupId>
       <artifactId>parent</artifactId>
-      <version>0.7.0</version>
+      <version>0.8.2</version>
    </parent>
 
    <groupId>com.stratio.egeo.starter</groupId>
