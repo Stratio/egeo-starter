@@ -1233,9 +1233,9 @@ egeo-ui-base@0.4.0:
   version "0.4.0"
   resolved "http://sodio.stratio.com/nexus/content/groups/publicnpm/egeo-ui-base/-/egeo-ui-base-0.4.0.tgz#10dfaac1ca0b60269c3d2cbced6d17a880ffd7ad"
 
-egeo@1.0.0-RC1:
-  version "1.0.0-RC1"
-  resolved "http://sodio.stratio.com/nexus/content/groups/publicnpm/egeo/-/egeo-1.0.0-RC1.tgz#0bc4b2658be35dcd3a48d0bae4ea64dae0a6f8b8"
+egeo@1.0.0:
+  version "1.0.0"
+  resolved "http://sodio.stratio.com/nexus/content/groups/publicnpm/egeo/-/egeo-1.0.0.tgz#937d91d5b0625cda577af1ca324b7d88baf65e40"
   dependencies:
     "@angular/common" "2.4.7"
     "@angular/compiler" "2.4.7"
