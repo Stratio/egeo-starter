@@ -101,7 +101,7 @@
                   </goals>
                   <phase>deploy</phase>
                   <configuration>
-                     <npmRegistryURL>http://sodio.stratio.com/nexus/content/repositories/strationpmjs</npmRegistryURL>
+                     <npmRegistryURL>http://sodio.stratio.com/repository/strationpmjs</npmRegistryURL>
                      <arguments>publish</arguments>
                   </configuration>
                </execution>
@@ -115,7 +115,7 @@
          <properties>
             <customnodeDownloadRoot>${nodeURL}/node/</customnodeDownloadRoot>
             <customnpmDownloadRoot>${nodeURL}/npm/${npmVer}/</customnpmDownloadRoot>
-            <customnpmRegistryURL>http://sodio.stratio.com/nexus/content/groups/publicnpm/</customnpmRegistryURL>
+            <customnpmRegistryURL>http://sodio.stratio.com/repository/publicnpm/</customnpmRegistryURL>
          </properties>
       </profile>
    </profiles>
