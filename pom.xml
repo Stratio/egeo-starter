@@ -4,7 +4,7 @@
    <parent>
       <groupId>com.stratio</groupId>
       <artifactId>parent</artifactId>
-      <version>0.8.2</version>
+      <version>0.10.0-SNAPSHOT</version>
    </parent>
 
    <groupId>com.stratio.egeo.starter</groupId>
@@ -15,6 +15,11 @@
    <description>Stratio Egeo starter for angular2, typescript and webpack project</description>
    <inceptionYear>2016</inceptionYear>
    <packaging>pom</packaging>
+
+   <issueManagement>
+      <system>GitHub</system>
+      <url>https://github.com/Stratio/egeo-starter/issues</url>
+   </issueManagement>
 
    <properties>
       <nodeVer>v6.9.2</nodeVer>
@@ -106,6 +111,10 @@
                   </configuration>
                </execution>
             </executions>
+         </plugin>
+         <plugin>
+            <groupId>com.mycila</groupId>
+            <artifactId>license-maven-plugin</artifactId>
          </plugin>
       </plugins>
    </build>
