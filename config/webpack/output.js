@@ -14,30 +14,15 @@
  * limitations under the License.
  */
 
-let env = 'dev';
+const helpers = require('../helpers');
 
-switch (process.env.NODE_ENV) {
-   case 'prod':
-   case 'production':
-      env = 'prod';
-      break;
-   case 'test':
-   case 'testing':
-      env = 'test';
-}
-
-let config = {
-   devServer: require('./config/webpack/dev-server'),
-   entry: require('./config/webpack/entry.'+env),
-   module: {
-      rules: require('./config/webpack/rules')
-   },
-   performance: {
-      hints: false
-   },
-   output: require('./config/webpack/output'),
-   plugins: require('./config/webpack/plugins'),
-   resolve: require('./config/webpack/resolve')
+let output = {
+   chunkFilename: '[id].chunk.js',
+   filename: '[name].js',
+   library: 'ac_[name]',
+   libraryTarget: 'var',
+   path: helpers.root('dist'),
+   sourceMapFilename: '[name].map'
 };
 
-module.exports = config;
+module.exports = output;

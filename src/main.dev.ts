@@ -14,30 +14,7 @@
  * limitations under the License.
  */
 
-let env = 'dev';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { AppModule } from './app/app.module';
 
-switch (process.env.NODE_ENV) {
-   case 'prod':
-   case 'production':
-      env = 'prod';
-      break;
-   case 'test':
-   case 'testing':
-      env = 'test';
-}
-
-let config = {
-   devServer: require('./config/webpack/dev-server'),
-   entry: require('./config/webpack/entry.'+env),
-   module: {
-      rules: require('./config/webpack/rules')
-   },
-   performance: {
-      hints: false
-   },
-   output: require('./config/webpack/output'),
-   plugins: require('./config/webpack/plugins'),
-   resolve: require('./config/webpack/resolve')
-};
-
-module.exports = config;
+platformBrowserDynamic().bootstrapModule(AppModule);

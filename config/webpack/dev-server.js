@@ -14,30 +14,20 @@
  * limitations under the License.
  */
 
-let env = 'dev';
+const helpers = require('../helpers');
 
-switch (process.env.NODE_ENV) {
-   case 'prod':
-   case 'production':
-      env = 'prod';
-      break;
-   case 'test':
-   case 'testing':
-      env = 'test';
-}
-
-let config = {
-   devServer: require('./config/webpack/dev-server'),
-   entry: require('./config/webpack/entry.'+env),
-   module: {
-      rules: require('./config/webpack/rules')
+let devServer = {
+   clientLogLevel: "warning",
+   historyApiFallback: true,
+   host: process.env.HOST || 'localhost',
+   port: process.env.PORT || 3000,
+   proxy: {
+      '/api': {
+         target: 'http://localhost:9000/',
+         secure: false
+      }
    },
-   performance: {
-      hints: false
-   },
-   output: require('./config/webpack/output'),
-   plugins: require('./config/webpack/plugins'),
-   resolve: require('./config/webpack/resolve')
+   stats: "errors-only"
 };
 
-module.exports = config;
+module.exports = devServer;
