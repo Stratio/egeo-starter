@@ -14,30 +14,17 @@
  * limitations under the License.
  */
 
-let env = 'dev';
+const helpers = require('../helpers');
 
-switch (process.env.NODE_ENV) {
-   case 'prod':
-   case 'production':
-      env = 'prod';
-      break;
-   case 'test':
-   case 'testing':
-      env = 'test';
-}
+const alias = require(helpers.root('src/alias'));
 
-let config = {
-   devServer: require('./config/webpack/dev-server'),
-   entry: require('./config/webpack/entry.'+env),
-   module: {
-      rules: require('./config/webpack/rules')
-   },
-   performance: {
-      hints: false
-   },
-   output: require('./config/webpack/output'),
-   plugins: require('./config/webpack/plugins'),
-   resolve: require('./config/webpack/resolve')
+let resolve = {
+   alias: alias.appModules(),
+   extensions: ['.js', '.ts'],
+   modules: [
+      helpers.root('node_modules'),
+      helpers.root('src')
+   ]
 };
 
-module.exports = config;
+module.exports = resolve;
