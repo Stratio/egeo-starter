@@ -16,7 +16,7 @@
 
 import { Component, ChangeDetectorRef } from '@angular/core';
 
-import { StHeaderModel, StFooterLink } from 'egeo';
+import { StHeaderModel, StFooterLink } from '@stratio/egeo';
 
 @Component({
    selector: 'layout',

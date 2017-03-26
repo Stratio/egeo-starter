@@ -15,7 +15,7 @@
  */
 
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
-import { StRadioMenuOption } from "egeo";
+import { StRadioMenuOption } from '@stratio/egeo';
 @Component({
    selector: 'radio-menu-example',
    templateUrl: './radioMenuExample.template.html',
