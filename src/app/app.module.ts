@@ -16,6 +16,7 @@
 
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateModule } from 'ng2-translate';
 import { EgeoModule } from '@stratio/egeo';
 
@@ -31,6 +32,7 @@ import { ErrorsModule } from '@starter/errors';
    imports: [
       AppRoutingModule,
       BrowserModule,
+      BrowserAnimationsModule,
       EgeoModule.forRoot(),
       ErrorsModule,
       TranslateModule.forRoot(TRANSLATE_CONFIG),
