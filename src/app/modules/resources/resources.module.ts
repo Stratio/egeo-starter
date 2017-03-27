@@ -19,8 +19,8 @@ import { NgModule } from '@angular/core';
 import {
    ResourcesComponent, ResourcesRoutingModule, InfoCardExampleComponent
 } from '.';
-import { SharedModule } from "@starter/shared";
-import { EgeoModule } from "egeo";
+import { SharedModule } from '@starter/shared';
+import { EgeoModule } from '@stratio/egeo';
 
 @NgModule({
    declarations: [

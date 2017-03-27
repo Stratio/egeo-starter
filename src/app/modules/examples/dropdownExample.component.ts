@@ -15,7 +15,7 @@
  */
 
 import { Component } from '@angular/core';
-import { StDropDownMenuItem } from "egeo";
+import { StDropDownMenuItem } from '@stratio/egeo';
 
 @Component({
    selector: 'dropdown-example',

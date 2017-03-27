@@ -15,8 +15,8 @@
  */
 
 import { Component } from '@angular/core';
-import { StInputError } from "egeo";
-import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+import { StInputError } from '@stratio/egeo';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
    selector: 'form-example',
