@@ -17,7 +17,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { Error404Component } from "@starter/errors";
+import { Error404Component } from '@starter/errors';
 
 const appRoutes:Routes = [
    {

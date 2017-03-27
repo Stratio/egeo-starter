@@ -25,5 +25,5 @@ import '@angular/router';
 import 'rxjs';
 
 // Global styles
-import 'egeo-theme/egeo-theme-stratio.css';
+import '@stratio/egeo-theme/egeo-theme-stratio.css';
 import 'flexboxgrid/css/flexboxgrid.css';
