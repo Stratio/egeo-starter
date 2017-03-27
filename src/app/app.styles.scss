@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+$egeo-sanitize: true;
+$egeo-grid: true;
 @import '~@stratio/egeo-ui-base/utils/typography';
 @import '~@stratio/egeo-ui-base/vendors/sanitize';
 @import '~@stratio/egeo-ui-base/utils/grid';
