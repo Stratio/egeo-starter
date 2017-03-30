@@ -8,7 +8,7 @@ RUN apk update && \
     adduser -D -u 1000 -g 'www' www && \
     mkdir /usr/share/www && chown -R www:www /usr/share/www && \
     chown -R www:www /var/lib/nginx && \
-    echo  ${COMMITD} > viewer-front-${VERSION}.info
+    echo  ${COMMITD} > egeo-starter-${VERSION}.info
 
 # Copy the artifacts
 ADD dist /usr/share/www
