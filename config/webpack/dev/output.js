@@ -14,19 +14,15 @@
  * limitations under the License.
  */
 
-/**
- * 'app/modules/*' routes are configured to be recognized by tsconfig.json
- * for any other route it is needed to be added to tsconfig.json too
- */
-const appModules = {
-   '@starter/core': 'app/modules/core',
-   '@starter/errors': 'app/modules/errors',
-   '@starter/example': 'app/modules/examples',
-   '@starter/layout': 'app/modules/layout',
-   '@starter/resources': 'app/modules/resources',
-   '@starter/shared': 'app/modules/shared'
+const helpers = require('../../helpers');
+
+let output = {
+   chunkFilename: '[id].chunk.js',
+   filename: '[name].js',
+   library: 'ac_[name]',
+   libraryTarget: 'var',
+   path: helpers.root('dist'),
+   sourceMapFilename: '[name].map'
 };
 
-exports.appModules = function() {
-   return appModules;
-};
+module.exports = output;

@@ -14,19 +14,11 @@
  * limitations under the License.
  */
 
-const helpers = require('../helpers');
-
 let devServer = {
    clientLogLevel: "warning",
    historyApiFallback: true,
    host: process.env.HOST || 'localhost',
    port: process.env.PORT || 3000,
-   proxy: {
-      '/api': {
-         target: 'http://localhost:9000/',
-         secure: false
-      }
-   },
    stats: "errors-only"
 };
 

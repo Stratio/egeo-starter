@@ -14,14 +14,12 @@
  * limitations under the License.
  */
 
-const helpers = require('../helpers');
+const helpers = require('../../helpers');
 
 let output = {
-   chunkFilename: '[id].chunk.js',
    filename: '[name].js',
-   library: 'ac_[name]',
-   libraryTarget: 'var',
    path: helpers.root('dist'),
+   publicPath: 'dist/',
    sourceMapFilename: '[name].map'
 };
 
