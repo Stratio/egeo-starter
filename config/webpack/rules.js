@@ -22,26 +22,16 @@ let rules = [
       use: '@ngtools/webpack'
    },
    {
-      test: /\.css$/,
-      use: 'style-loader'
+      test: /\.html$/,
+      use: 'raw-loader'
+   },
+   {
+      test: /\.scss$/,
+      use: [
+         'raw-loader',
+         'sass-loader'
+      ]
    }
-   // {
-   //    test: /\.scss$/,
-   //    use: [ 'raw-loader', 'sass-loader' ]
-   // },
-   // {
-   //    test: /\.css$/,
-   //    use: [ 'style-loader', 'css-loader' ]
-   // },
-   // {
-   //    test: /\.html$/,
-   //    use: 'raw-loader'
-   // },
-   // {
-   //    test: /\.ts$/,
-   //    use: '@ngtools/webpack',
-   //    exclude: [ /\.(spec|e2e)\.ts$/ ]
-   // }
 ];
 
 module.exports = rules;

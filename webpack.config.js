@@ -32,7 +32,7 @@ let config = {
    devtool: env === 'prod' ? 'source-map' : 'eval',
    entry: require('./config/webpack/entry'),
    module: {
-      rules: require('./config/webpack/'+env+'/rules')
+      rules: require('./config/webpack/rules')
    },
    performance: {
       hints: false
