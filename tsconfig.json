@@ -1,26 +1,22 @@
 {
-   "buildOnSave": false,
-   "compileOnSave": false,
+   "angularCompilerOptions": {
+      "genDir": "./dist/aot"
+   },
    "compilerOptions": {
-      "baseUrl": "./src",
       "emitDecoratorMetadata": true,
       "experimentalDecorators": true,
-      "module": "commonjs",
+      "lib": [
+         "es2015",
+         "dom"
+      ],
+      "mapRoot": "",
+      "module": "es2015",
       "moduleResolution": "node",
-      "noImplicitAny": true,
-      "paths": {
-         "@starter/*": [ "app/modules/*" ]
-      },
-      "pretty": true,
-      "removeComments": false,
+      "noImplicitAny": false,
+      "outDir": "dist",
+      "rootDir": ".",
       "skipLibCheck": true,
       "sourceMap": true,
-      "strictNullChecks": false,
-      "suppressImplicitAnyIndexErrors": true,
       "target": "es5"
-   },
-   "exclude": [
-      "dist",
-      "node_modules"
-   ]
+   }
 }
