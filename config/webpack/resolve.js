@@ -14,17 +14,18 @@
  * limitations under the License.
  */
 
-const helpers = require('../helpers');
+'use strict';
 
-const alias = require(helpers.root('src/alias'));
+const path = require('path');
+// const alias = require(path.resolve(process.cwd(), 'src/alias'));
 
 let resolve = {
-   alias: alias.appModules(),
-   extensions: ['.js', '.ts'],
-   modules: [
-      helpers.root('node_modules'),
-      helpers.root('src')
-   ]
+   // alias: alias.appModules(),
+   extensions: ['.ts', '.js'],
+   // modules: [
+   //    'node_modules',
+   //    path.resolve(process.cwd(), 'src')
+   // ]
 };
 
 module.exports = resolve;

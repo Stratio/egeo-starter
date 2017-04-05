@@ -14,13 +14,31 @@
  * limitations under the License.
  */
 
-const helpers = require('../../helpers');
+'use strict';
 
-const ngToolsWebpack = require('@ngtools/webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const NgToolsWebpack = require('@ngtools/webpack');
+const path = require('path');
+const webpack = require('webpack');
+
+const CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
 
 let plugins = [
-   new ngToolsWebpack.AotPlugin({
-      tsConfigPath: helpers.root('config/typescript/tsconfig.prod.json')
+   new CopyWebpackPlugin([
+      { from: './src/index.html' }
+   ]),
+   new NgToolsWebpack.AotPlugin({
+      tsConfigPath: './tsconfig.json',
+      mainPath: "./src/main.ts"
+   }),
+   new CommonsChunkPlugin({
+      names: [
+         'vendor',
+         'polyfills'
+      ]
+   }),
+   new CommonsChunkPlugin({
+      async: true
    })
 ];
 
