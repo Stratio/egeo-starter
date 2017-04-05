@@ -14,60 +14,34 @@
  * limitations under the License.
  */
 
-const helpers = require('../../helpers');
+'use strict';
 
 let rules = [
    {
       test: /\.ts$/,
-      use: [
-         'awesome-typescript-loader',
-         'angular2-template-loader',
-         'angular-router-loader'
-      ],
-      exclude: [/\.(spec|e2e)\.ts$/]
-   },
-   {
-      test: /\.json$/,
-      use: 'json-loader'
-   },
-   {
-      test: /\.html$/,
-      use: 'raw-loader',
-      exclude: [helpers.root('src/index.html')]
+      use: '@ngtools/webpack'
    },
    {
       test: /\.css$/,
-      use: ['style-loader', 'css-loader']
-   },
-   {
-      test: /\.scss$/,
-      exclude: '/node_modules/',
-      use: ['raw-loader', 'sass-loader']
-   },
-   {
-      test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
-      use: "url-loader?limit=10000&minetype=application/font-woff"
-   },
-   {
-      test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
-      use: "url-loader?limit=10000&minetype=application/font-woff"
-   },
-   {
-      test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-      use: "url-loader?limit=10000&minetype=application/octet-stream"
-   },
-   {
-      test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-      use: "file-loader"
-   },
-   {
-      test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-      use: "url-loader?limit=10000&minetype=image/svg+xml"
-   },
-   {
-      test: /\.ico(\?v=\d+\.\d+\.\d+)?$/,
-      use: "file-loader"
+      use: 'style-loader'
    }
+   // {
+   //    test: /\.scss$/,
+   //    use: [ 'raw-loader', 'sass-loader' ]
+   // },
+   // {
+   //    test: /\.css$/,
+   //    use: [ 'style-loader', 'css-loader' ]
+   // },
+   // {
+   //    test: /\.html$/,
+   //    use: 'raw-loader'
+   // },
+   // {
+   //    test: /\.ts$/,
+   //    use: '@ngtools/webpack',
+   //    exclude: [ /\.(spec|e2e)\.ts$/ ]
+   // }
 ];
 
 module.exports = rules;

@@ -14,10 +14,12 @@
  * limitations under the License.
  */
 
+'use strict';
+
 let entry = {
-   'app': './src/main.ts',
-   'polyfills': './src/polyfills.ts',
-   'vendor': './src/vendor.ts'
+   main: './src/main.ts',
+   polyfills: './src/polyfills.ts',
+   vendor: './src/vendor.ts'
 };
 
 module.exports = entry;

@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-const helpers = require('../../helpers');
+'use strict';
+
+const path = require('path');
 
 let output = {
-   filename: '[name].js',
-   path: helpers.root('dist'),
-   publicPath: 'dist/',
-   sourceMapFilename: '[name].map'
+   filename: "[name].js",
+   path: path.join(process.cwd(), 'dist')
 };
 
 module.exports = output;
