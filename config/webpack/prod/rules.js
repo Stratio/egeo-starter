@@ -14,19 +14,24 @@
  * limitations under the License.
  */
 
-/**
- * 'app/modules/*' routes are configured to be recognized by tsconfig.json
- * for any other route it is needed to be added to tsconfig.json too
- */
-const appModules = {
-   '@starter/core': 'app/modules/core',
-   '@starter/errors': 'app/modules/errors',
-   '@starter/example': 'app/modules/examples',
-   '@starter/layout': 'app/modules/layout',
-   '@starter/resources': 'app/modules/resources',
-   '@starter/shared': 'app/modules/shared'
-};
+let rules = [
+   {
+      test: /\.scss$/,
+      use: [ 'raw-loader', 'sass-loader' ]
+   },
+   {
+      test: /\.css$/,
+      use: [ 'style-loader', 'css-loader' ]
+   },
+   {
+      test: /\.html$/,
+      use: 'raw-loader'
+   },
+   {
+      test: /\.ts$/,
+      use: '@ngtools/webpack',
+      exclude: [ /\.(spec|e2e)\.ts$/ ]
+   }
+];
 
-exports.appModules = function() {
-   return appModules;
-};
+module.exports = rules;

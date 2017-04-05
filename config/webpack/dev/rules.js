@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-const helpers = require('../helpers');
+const helpers = require('../../helpers');
 
 let rules = [
    {

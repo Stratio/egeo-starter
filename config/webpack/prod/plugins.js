@@ -14,19 +14,14 @@
  * limitations under the License.
  */
 
-/**
- * 'app/modules/*' routes are configured to be recognized by tsconfig.json
- * for any other route it is needed to be added to tsconfig.json too
- */
-const appModules = {
-   '@starter/core': 'app/modules/core',
-   '@starter/errors': 'app/modules/errors',
-   '@starter/example': 'app/modules/examples',
-   '@starter/layout': 'app/modules/layout',
-   '@starter/resources': 'app/modules/resources',
-   '@starter/shared': 'app/modules/shared'
-};
+const helpers = require('../../helpers');
 
-exports.appModules = function() {
-   return appModules;
-};
+const ngToolsWebpack = require('@ngtools/webpack');
+
+let plugins = [
+   new ngToolsWebpack.AotPlugin({
+      tsConfigPath: helpers.root('config/typescript/tsconfig.prod.json')
+   })
+];
+
+module.exports = plugins;

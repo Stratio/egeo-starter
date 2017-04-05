@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-const helpers = require('../helpers');
+const helpers = require('../../helpers');
 
 const AssetsPlugin = require('assets-webpack-plugin');
 const CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
@@ -22,7 +22,8 @@ const ContextReplacementPlugin = require('webpack/lib/ContextReplacementPlugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const NormalModuleReplacementPlugin = require('webpack/lib/NormalModuleReplacementPlugin');
-const StringReplacePlugin = require("string-replace-webpack-plugin");
+const StringReplacePlugin = require('string-replace-webpack-plugin');
+const webpack = require('webpack');
 
 let plugins = [
    new AssetsPlugin({
@@ -35,7 +36,7 @@ let plugins = [
       name: ['polyfills', 'vendor'].reverse()
    }),
    new ContextReplacementPlugin(
-      /angular(\\|\/)core(\\|\/)src(\\|\/)linker/,
+      /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
       helpers.root('src'),
       { }
    ),

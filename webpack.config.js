@@ -28,15 +28,15 @@ switch (process.env.NODE_ENV) {
 
 let config = {
    devServer: require('./config/webpack/dev-server'),
-   entry: require('./config/webpack/entry.'+env),
+   entry: require('./config/webpack/'+env+'/entry'),
    module: {
-      rules: require('./config/webpack/rules')
+      rules: require('./config/webpack/'+env+'/rules')
    },
    performance: {
       hints: false
    },
-   output: require('./config/webpack/output'),
-   plugins: require('./config/webpack/plugins'),
+   output: require('./config/webpack/'+env+'/output'),
+   plugins: require('./config/webpack/'+env+'/plugins'),
    resolve: require('./config/webpack/resolve')
 };
 
