@@ -14,58 +14,32 @@
  * limitations under the License.
  */
 
-const helpers = require('../../helpers');
+'use strict';
 
-const AssetsPlugin = require('assets-webpack-plugin');
-const CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
-const ContextReplacementPlugin = require('webpack/lib/ContextReplacementPlugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const NormalModuleReplacementPlugin = require('webpack/lib/NormalModuleReplacementPlugin');
-const StringReplacePlugin = require('string-replace-webpack-plugin');
+const NgToolsWebpack = require('@ngtools/webpack');
+const path = require('path');
 const webpack = require('webpack');
 
+const CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
+
 let plugins = [
-   new AssetsPlugin({
-      path: helpers.root('dist'),
-      filename: 'webpack-assets.json',
-      prettyPrint: true
-   }),
-   new StringReplacePlugin(),
-   new CommonsChunkPlugin({
-      name: ['polyfills', 'vendor'].reverse()
-   }),
-   new ContextReplacementPlugin(
-      /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
-      helpers.root('src'),
-      { }
-   ),
    new CopyWebpackPlugin([
-      { from: 'src/assets', to: 'assets' }
+      { from: './src/index.html' }
    ]),
-   new HtmlWebpackPlugin({
-      template: 'src/index.html'
+   new NgToolsWebpack.AotPlugin({
+      tsConfigPath: './tsconfig.json',
+      mainPath: "./src/main.ts"
    }),
-   new NormalModuleReplacementPlugin(
-      /facade(\\|\/)async/,
-      helpers.root('node_modules/@angular/core/src/facade/async.js')
-   ),
-   new NormalModuleReplacementPlugin(
-      /facade(\\|\/)collection/,
-      helpers.root('node_modules/@angular/core/src/facade/collection.js')
-   ),
-   new NormalModuleReplacementPlugin(
-      /facade(\\|\/)errors/,
-      helpers.root('node_modules/@angular/core/src/facade/errors.js')
-   ),
-   new NormalModuleReplacementPlugin(
-      /facade(\\|\/)lang/,
-      helpers.root('node_modules/@angular/core/src/facade/lang.js')
-   ),
-   new NormalModuleReplacementPlugin(
-      /facade(\\|\/)math/,
-      helpers.root('node_modules/@angular/core/src/facade/math.js')
-   )
+   new CommonsChunkPlugin({
+      names: [
+         'vendor',
+         'polyfills'
+      ]
+   }),
+   new CommonsChunkPlugin({
+      async: true
+   })
 ];
 
 module.exports = plugins;

@@ -14,12 +14,15 @@
  * limitations under the License.
  */
 
+'use strict';
+
 let devServer = {
-   clientLogLevel: "warning",
+   clientLogLevel: 'warning',
+   contentBase: './src',
    historyApiFallback: true,
    host: process.env.HOST || 'localhost',
    port: process.env.PORT || 3000,
-   stats: "errors-only"
+   stats: 'errors-only'
 };
 
 module.exports = devServer;
