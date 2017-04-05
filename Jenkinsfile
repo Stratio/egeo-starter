@@ -11,19 +11,19 @@ hose {
    PKGMODULESNAMES = ['egeo-starter']
 
    DEV = { config ->
-      doCompile(config)
-      doUT(config)
-      doPackage(config)
-      parallel(
-         QC: {
-            doStaticAnalysis(config)
-         },
-         DEPLOY: {
-            doDeploy(config)
-         },
-         DOCKER: {
-            doDocker(config)
-         }
-      )
+      // doCompile(config)
+      // doUT(config)
+      // doPackage(config)
+      // parallel(
+      //    QC: {
+      //       doStaticAnalysis(config)
+      //    },
+      //    DEPLOY: {
+      //       doDeploy(config)
+      //    },
+      //    DOCKER: {
+      //       doDocker(config)
+      //    }
+      // )
    }
 }
