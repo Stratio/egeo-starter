@@ -19,7 +19,7 @@
 const path = require('path');
 
 let output = {
-   filename: "[name].js",
+   filename: "[name].[hash].js",
    path: path.join(process.cwd(), 'dist')
 };
 
