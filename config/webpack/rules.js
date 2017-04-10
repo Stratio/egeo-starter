@@ -16,6 +16,9 @@
 
 'use strict';
 
+const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
 let rules = [
    {
       test: /\.ts$/,
@@ -26,11 +29,34 @@ let rules = [
       use: 'raw-loader'
    },
    {
+      include: [ path.resolve(process.cwd(), 'src/app') ],
       test: /\.scss$/,
       use: [
          'raw-loader',
          'sass-loader'
       ]
+   },
+   {
+      include: [
+         path.resolve(process.cwd(), 'node_modules'),
+         path.resolve(process.cwd(), 'src/styles')
+      ],
+      test: /\.scss$/,
+      use: ExtractTextPlugin.extract({
+         fallback: 'style-loader',
+         use: [
+            'css-loader',
+            'sass-loader'
+         ]
+      })
+   },
+   {
+      test: /\.(jpg|png|gif)$/,
+      use: 'file-loader'
+   },
+   {
+      test: /\.(ttf|eot|svg|woff|woff2|ico)$/,
+      use: 'file-loader?name=assets/fonts/[name].[ext]'
    }
 ];
 

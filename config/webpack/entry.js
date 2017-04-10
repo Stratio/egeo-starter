@@ -18,8 +18,7 @@
 
 let entry = {
    main: './src/main.ts',
-   polyfills: './src/polyfills.ts',
-   vendor: './src/vendor.ts'
+   polyfills: './src/polyfills.ts'
 };
 
 module.exports = entry;
