@@ -69,16 +69,6 @@
                   </configuration>
                </execution>
                <execution>
-                  <id>replace version</id>
-                  <goals>
-                     <goal>npm</goal>
-                  </goals>
-                  <phase>generate-sources</phase>
-                  <configuration>
-                     <arguments>run-script replace -- this.version="${VERSION}"</arguments>
-                  </configuration>
-               </execution>
-               <execution>
                   <id>npm build</id>
                   <goals>
                      <goal>npm</goal>
