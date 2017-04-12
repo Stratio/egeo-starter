@@ -11,7 +11,7 @@ hose {
    PKGMODULESNAMES = ['egeo-starter']
 
    DEV = { config ->
-      // doCompile(config)
+      doCompile(config)
       // doUT(config)
       // doPackage(config)
       // parallel(
