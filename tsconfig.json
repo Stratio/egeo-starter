@@ -2,7 +2,10 @@
    "angularCompilerOptions": {
       "genDir": "./dist/aot"
    },
+   "buildOnSave": false,
+   "compileOnSave": false,
    "compilerOptions": {
+      "baseUrl": "./src",
       "emitDecoratorMetadata": true,
       "experimentalDecorators": true,
       "lib": [
@@ -12,8 +15,11 @@
       "mapRoot": "",
       "module": "es2015",
       "moduleResolution": "node",
-      "noImplicitAny": false,
+      "noImplicitAny": true,
       "outDir": "dist",
+      "paths": {
+         "@app/*": [ "app/modules/*" ]
+      },
       "rootDir": ".",
       "skipLibCheck": true,
       "sourceMap": true,

@@ -14,18 +14,17 @@
  * limitations under the License.
  */
 
-'use strict';
-
-const path = require('path');
-const alias = require(path.resolve(process.cwd(), 'src/alias'));
-
-let resolve = {
-   alias: alias.appModules(),
-   extensions: ['.ts', '.js'],
-   modules: [
-      path.resolve(process.cwd(), 'node_modules'),
-      path.resolve(process.cwd(), 'src')
-   ]
+// 'app/modules/*' routes are configured to be recognized by tsconfig.json
+// for any other route it is needed to be added to tsconfig.json too
+const appModules = {
+   '@app/core': 'app/modules/core',
+   '@app/errors': 'app/modules/errors',
+   '@app/example': 'app/modules/examples',
+   '@app/layout': 'app/modules/layout',
+   '@app/resources': 'app/modules/resources',
+   '@app/shared': 'app/modules/shared'
 };
 
-module.exports = resolve;
+exports.appModules = function () {
+   return appModules;
+};
