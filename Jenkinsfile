@@ -13,17 +13,17 @@ hose {
    DEV = { config ->
       doCompile(config)
       // doUT(config)
-      // doPackage(config)
-      // parallel(
-      //    QC: {
-      //       doStaticAnalysis(config)
-      //    },
-      //    DEPLOY: {
-      //       doDeploy(config)
-      //    },
-      //    DOCKER: {
-      //       doDocker(config)
-      //    }
-      // )
+      doPackage(config)
+      parallel(
+         QC: {
+            doStaticAnalysis(config)
+         },
+         DEPLOY: {
+            doDeploy(config)
+         },
+         DOCKER: {
+            doDocker(config)
+         }
+      )
    }
 }
