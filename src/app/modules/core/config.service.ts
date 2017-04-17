@@ -5,18 +5,18 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
-export class JsonService {
+export class ConfigService {
 
-   private _jsonData:any;
+   private _config:any;
 
    constructor(private http:Http) { }
 
-   get jsonData():any {
-      return this._jsonData;
+   get config():any {
+      return this._config;
    }
 
-   set jsonData(data:any) {
-      this._jsonData = data;
+   set config(data:any) {
+      this._config = data;
    }
 
    load(url:string):Promise<any> {
@@ -24,7 +24,7 @@ export class JsonService {
          .get(url)
          .map((res:Response) => res.json())
          .toPromise()
-         .then((data:any) => this.jsonData = data)
+         .then((data:any) => this.config = data)
          .catch((err:any) => Promise.resolve());
    }
 }

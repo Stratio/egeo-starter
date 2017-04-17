@@ -3,10 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { CONFIG } from "./app.config";
+import { INITIALIZER, ConfigService } from "@app/core";
 import { AppRouter } from './app.router';
-import { JsonService } from "@app/utils";
-import { Repository } from './repository';
 
 @NgModule({
    bootstrap: [ AppComponent ],
@@ -17,9 +15,8 @@ import { Repository } from './repository';
       HttpModule
    ],
    providers: [
-      JsonService,
-      Repository,
-      CONFIG
+      ConfigService,
+      INITIALIZER
    ]
 })
 
