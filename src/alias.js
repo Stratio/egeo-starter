@@ -22,7 +22,8 @@ const appModules = {
    '@app/example': 'app/modules/examples',
    '@app/layout': 'app/modules/layout',
    '@app/resources': 'app/modules/resources',
-   '@app/shared': 'app/modules/shared'
+   '@app/shared': 'app/modules/shared',
+   '@app/utils': 'app/modules/utils'
 };
 
 exports.appModules = function () {

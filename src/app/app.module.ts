@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { CONFIG } from "./app.config";
 import { AppRouter } from './app.router';
+import { JsonService } from "@app/utils";
 import { Repository } from './repository';
 
 @NgModule({
@@ -10,9 +13,14 @@ import { Repository } from './repository';
    declarations: [ AppComponent ],
    imports: [
       AppRouter,
-      BrowserModule
+      BrowserModule,
+      HttpModule
    ],
-   providers: [Repository]
+   providers: [
+      JsonService,
+      Repository,
+      CONFIG
+   ]
 })
 
 export class AppModule { }
