@@ -1,0 +1,10 @@
+{
+   "ERRORS": {
+      "404": "404: Page missing"
+   },
+   "GLOBAL": {
+      "EXAMPLES": "Examples",
+      "GREETINGS": "Hello World!",
+      "RESOURCES": "Resources"
+   }
+}

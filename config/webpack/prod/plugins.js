@@ -28,8 +28,9 @@ const CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
 let plugins = [
    new ExtractTextPlugin('styles.[hash].css'),
    new CopyWebpackPlugin([
-      { from: './src/index.html' },
-      { from: './src/config.json' }
+      { from: './src/assets', to: './assets' },
+      { from: './src/config.json' },
+      { from: './src/index.html' }
    ]),
    new HtmlWebpackPlugin({
       template: './src/index.html'

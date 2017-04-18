@@ -14,25 +14,19 @@
  * limitations under the License.
  */
 
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-
-import { Error404Component } from '@app/errors';
-
-const appRoutes:Routes = [
-   {
-      path: '**',
-      component: Error404Component
-   }
-];
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
    exports: [
-      RouterModule
+      CommonModule,
+      TranslateModule
    ],
    imports: [
-      RouterModule.forRoot(appRoutes, { enableTracing: true })
+      CommonModule,
+      TranslateModule
    ]
 })
 
-export class AppRouter { }
+export class SharedModule { }
