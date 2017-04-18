@@ -14,25 +14,17 @@
  * limitations under the License.
  */
 
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Http } from '@angular/http';
+import { TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
-import { Error404Component } from '@app/errors';
+// Configuration for translate
+export function createTranslateLoader(http:Http):any {
+   return new TranslateHttpLoader(http, './assets/i18n', '.json');
+}
 
-const appRoutes:Routes = [
-   {
-      path: '**',
-      component: Error404Component
-   }
-];
-
-@NgModule({
-   exports: [
-      RouterModule
-   ],
-   imports: [
-      RouterModule.forRoot(appRoutes, { enableTracing: true })
-   ]
-})
-
-export class AppRouter { }
+export const TRANSLATE_CONFIG:any = {
+   provide: TranslateLoader,
+   useFactory: createTranslateLoader,
+   deps: [ Http ]
+};
