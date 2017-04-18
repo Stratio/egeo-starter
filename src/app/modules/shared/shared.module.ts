@@ -14,18 +14,19 @@
  * limitations under the License.
  */
 
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-
-import { errorsComponents } from '@app/errors';
-import { SharedModule } from '@app/shared';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
-   declarations: [
-      ...errorsComponents
+   exports: [
+      CommonModule,
+      TranslateModule
    ],
    imports: [
-      SharedModule
+      CommonModule,
+      TranslateModule
    ]
 })
 
-export class ErrorsModule { }
+export class SharedModule { }

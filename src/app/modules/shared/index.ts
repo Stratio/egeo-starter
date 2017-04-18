@@ -14,17 +14,4 @@
  * limitations under the License.
  */
 
-import { Http } from '@angular/http';
-import { TranslateLoader } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-
-// Configuration for translate
-export function createTranslateLoader(http:Http):any {
-   return new TranslateHttpLoader(http, './assets/i18n', '.json');
-}
-
-export const TRANSLATE_CONFIG:any = {
-   provide: TranslateLoader,
-   useFactory: createTranslateLoader,
-   deps: [ Http ]
-};
+export * from './shared.module';
