@@ -14,25 +14,16 @@
  * limitations under the License.
  */
 
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { APP_INITIALIZER } from '@angular/core';
+import { ConfigService } from "@app/core";
 
-import { Error404Component } from '@app/errors';
+export function getConfigJson(config:ConfigService):any {
+   return () => config.load('config.json');
+}
 
-const appRoutes:Routes = [
-   {
-      path: '**',
-      component: Error404Component
-   }
-];
-
-@NgModule({
-   exports: [
-      RouterModule
-   ],
-   imports: [
-      RouterModule.forRoot(appRoutes, { enableTracing: true })
-   ]
-})
-
-export class AppRouter { }
+export const INITIALIZER:any = {
+   provide: APP_INITIALIZER,
+   useFactory: getConfigJson,
+   deps: [ ConfigService ],
+   multi: true
+};
