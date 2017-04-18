@@ -15,6 +15,7 @@
  */
 
 import { Component, ViewEncapsulation } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
    selector: 'st-app',
@@ -22,4 +23,11 @@ import { Component, ViewEncapsulation } from '@angular/core';
    templateUrl: './app.template.html'
 })
 
-export class AppComponent {}
+export class AppComponent {
+   constructor(translate:TranslateService) {
+      let lang:string = navigator.language.split('-')[0];
+      lang = /(es|en)/gi.test(lang) ? lang : 'en';
+      translate.setDefaultLang('en');
+      translate.use(lang);
+   }
+}

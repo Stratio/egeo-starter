@@ -14,18 +14,18 @@
  * limitations under the License.
  */
 
-import { NgModule } from '@angular/core';
+import { Http } from '@angular/http';
+import { TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
-import { errorsComponents } from '@app/errors';
-import { SharedModule } from '@app/shared';
+export function createTranslateLoader(http:Http):any {
+   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 
-@NgModule({
-   declarations: [
-      ...errorsComponents
-   ],
-   imports: [
-      SharedModule
-   ]
-})
-
-export class ErrorsModule { }
+export const TRANSLATE_CONFIG:any = {
+   loader: {
+      provide: TranslateLoader,
+      useFactory: (createTranslateLoader),
+      deps: [ Http ]
+   }
+};

@@ -14,5 +14,6 @@
  * limitations under the License.
  */
 
-export * from './initializer.config';
-export * from './config.service';
+export * from './config/config.service';
+export * from './config/initializer.config';
+export * from './config/translate.config';

@@ -17,18 +17,25 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { AppComponent } from './app.component';
 import { AppRouter } from './app.router';
-import { ConfigService, INITIALIZER } from "@app/core";
+import { ConfigService, INITIALIZER, TRANSLATE_CONFIG } from "@app/core";
+import { SharedModule } from "@app/shared";
 
 @NgModule({
    bootstrap: [ AppComponent ],
    declarations: [ AppComponent ],
+   exports: [
+      SharedModule
+   ],
    imports: [
       AppRouter,
       BrowserModule,
-      HttpModule
+      HttpModule,
+      SharedModule,
+      TranslateModule.forRoot(TRANSLATE_CONFIG)
    ],
    providers: [
       ConfigService,
