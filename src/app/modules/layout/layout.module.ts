@@ -15,30 +15,21 @@
  */
 
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { HttpModule } from '@angular/http';
-import { TranslateModule } from '@ngx-translate/core';
+import { FormsModule } from '@angular/forms';
+// import { EgeoModule } from '@stratio/egeo';
 
-import { AppComponent } from './app.component';
-import { AppRouter } from './app.router';
-import { ConfigService, INITIALIZER, TRANSLATE_CONFIG } from '@app/core';
+import { LayoutComponent, LayoutRouter } from '.';
 import { SharedModule } from '@app/shared';
 
 @NgModule({
-   bootstrap: [ AppComponent ],
-   declarations: [ AppComponent ],
-   imports: [
-      AppRouter,
-      BrowserModule,
-      // EgeoModule.forRoot(),
-      HttpModule,
-      SharedModule,
-      TranslateModule.forRoot(TRANSLATE_CONFIG)
+   declarations: [
+      LayoutComponent
    ],
-   providers: [
-      ConfigService,
-      INITIALIZER
+   imports: [
+      FormsModule,
+      LayoutRouter,
+      SharedModule
    ]
 })
 
-export class AppModule { }
+export class LayoutModule { }
