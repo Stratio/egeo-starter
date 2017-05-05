@@ -1,29 +1,68 @@
-module.exports = function (config) {
-   var webpack = require('../webpack/webpack.test.js');
+/*
+ * Copyright (C) 2016 Stratio (http://stratio.com)
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
-   var configuration = {
+'use strict';
+
+const path = require('path');
+
+const alias = require(path.resolve(process.cwd(), 'src/alias'));
+
+module.exports = function(config) {
+   config.set({
       autoWatch: false,
-      basePath: '',
-      browserDisconnectTimeout: 10000,
-      browserDisconnectTolerance: 1,
-      browserNoActivityTimeout: 30000,
-      browsers: ['PhantomJS'],
-      colors: true,
-      exclude: [],
+      browsers: [ 'PhantomJS' ],
       failOnEmptyTestSuite: false,
-      files: [{ pattern: './config/karma/spec-bundle.js', watched: false }],
-      frameworks: ['jasmine'],
+      files: [
+         { pattern: path.resolve(process.cwd(), 'config/karma/base.spec.ts') },
+         { pattern: path.resolve(process.cwd(), 'src/**/*.+(ts|html)') }
+      ],
+      frameworks: [ 'jasmine', 'karma-typescript' ],
+      karmaTypescriptConfig: {
+         bundlerOptions: {
+            directories: [
+               path.resolve(process.cwd(), 'node_modules'),
+               path.resolve(process.cwd(), 'src')
+            ],
+            entrypoints: /\.spec\.ts$/,
+            resolve: {
+               alias: alias.appModules()
+            },
+            transforms: [
+               require("karma-typescript-angular2-transform")
+            ]
+         },
+         compilerOptions: {
+            baseUrl: path.resolve(process.cwd(), 'src'),
+            lib: [ "ES2015", "DOM" ],
+            paths: {
+               "@app/*": [ "app/modules/*" ]
+            }
+         },
+         coverageOptions: {
+            instrumentation: true
+         }
+      },
       logLevel: config.LOG_INFO,
       phantomJsLauncher: {
          exitOnResourceError: true
       },
-      preprocessors: { './config/karma/spec-bundle.js': ['webpack', 'sourcemap'] },
-      port: 9876,
-      reporters: ['progress'],
-      singleRun: true,
-      webpack: webpack,
-      webpackMiddleware: { stats: 'errors-only' }
-   };
-
-   config.set(configuration);
+      preprocessors: {
+         "**/*.ts": [ "karma-typescript" ]
+      },
+      reporters: [ "progress", "karma-typescript" ],
+      singleRun: true
+   });
 };

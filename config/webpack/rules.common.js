@@ -21,6 +21,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 let rules = [
    {
+      exclude: [/\.(spec|e2e)\.ts$/],
       test: /\.ts$/,
       use: '@ngtools/webpack'
    },
