@@ -8,10 +8,7 @@
       "baseUrl": "./src",
       "emitDecoratorMetadata": true,
       "experimentalDecorators": true,
-      "lib": [
-         "es2015",
-         "dom"
-      ],
+      "lib": [ "es2015", "dom" ],
       "mapRoot": "",
       "module": "es2015",
       "moduleResolution": "node",
@@ -23,10 +20,8 @@
       "rootDir": ".",
       "skipLibCheck": true,
       "sourceMap": true,
-      "target": "es5"
+      "target": "es5",
+      "types": [ "jasmine", "node" ]
    },
-   "exclude": [
-      "dist",
-      "node_modules"
-   ]
+   "exclude": [ "dist", "node_modules" ]
 }

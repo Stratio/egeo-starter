@@ -16,36 +16,17 @@
 
 'use strict';
 
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const NgToolsWebpack = require('@ngtools/webpack');
-const path = require('path');
 const webpack = require('webpack');
-
 const CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
 
+const pluginsCommon = require('../plugins.common');
+
 let plugins = [
-   new ExtractTextPlugin('styles.css'),
-   new CopyWebpackPlugin([
-      { from: './src/assets', to: './assets' },
-      { from: './src/config.json' },
-      { from: './src/index.html' }
-   ]),
-   new HtmlWebpackPlugin({
-      template: './src/index.html'
-   }),
-   new NgToolsWebpack.AotPlugin({
-      tsConfigPath: './tsconfig.json',
-      mainPath: "./src/main.ts"
-   }),
+   ...pluginsCommon,
    new CommonsChunkPlugin({
       names: [
          'polyfills'
       ]
-   }),
-   new CommonsChunkPlugin({
-      async: true
    })
 ];
 

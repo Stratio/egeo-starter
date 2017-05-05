@@ -12,7 +12,7 @@ hose {
 
    DEV = { config ->
       doCompile(config)
-      // doUT(config)
+      doUT(config)
       doPackage(config)
       parallel(
          QC: {

@@ -14,29 +14,18 @@
  * limitations under the License.
  */
 
-'use strict';
+import { TestBed } from '@angular/core/testing';
 
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const webpack = require('webpack');
-const CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
+import { AppComponent } from './app.component';
 
-const pluginsCommon = require('../plugins.common');
+describe('App', () => {
+   // provide our implementations or mocks to the dependency injector
+   beforeEach(() => TestBed.configureTestingModule({
+         declarations: [AppComponent]
+      })
+   );
 
-let plugins = [
-   ...pluginsCommon,
-   new CopyWebpackPlugin([
-      { from: './src/assets', to: './assets' },
-      { from: './src/config.json' },
-      { from: './src/index.html' }
-   ]),
-   new CommonsChunkPlugin({
-      names: [
-         'polyfills'
-      ]
-   }),
-   new CommonsChunkPlugin({
-      async: true
-   })
-];
-
-module.exports = plugins;
+   it('should be true', () => {
+      expect(true).toEqual(true);
+   });
+});

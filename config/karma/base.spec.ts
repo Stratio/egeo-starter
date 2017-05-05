@@ -14,29 +14,16 @@
  * limitations under the License.
  */
 
-'use strict';
+import "core-js";
+import "zone.js/dist/zone";
+import "zone.js/dist/long-stack-trace-zone";
+import "zone.js/dist/proxy";
+import "zone.js/dist/sync-test";
+import "zone.js/dist/jasmine-patch";
+import "zone.js/dist/async-test";
+import "zone.js/dist/fake-async-test";
 
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const webpack = require('webpack');
-const CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
+import { TestBed } from "@angular/core/testing";
+import { BrowserDynamicTestingModule, platformBrowserDynamicTesting } from "@angular/platform-browser-dynamic/testing";
 
-const pluginsCommon = require('../plugins.common');
-
-let plugins = [
-   ...pluginsCommon,
-   new CopyWebpackPlugin([
-      { from: './src/assets', to: './assets' },
-      { from: './src/config.json' },
-      { from: './src/index.html' }
-   ]),
-   new CommonsChunkPlugin({
-      names: [
-         'polyfills'
-      ]
-   }),
-   new CommonsChunkPlugin({
-      async: true
-   })
-];
-
-module.exports = plugins;
+TestBed.initTestEnvironment(BrowserDynamicTestingModule, platformBrowserDynamicTesting());
