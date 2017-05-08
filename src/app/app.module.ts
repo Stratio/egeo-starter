@@ -18,6 +18,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { TranslateModule } from '@ngx-translate/core';
+import { EgeoModule } from '@stratio/egeo';
 
 import { AppComponent } from './app.component';
 import { AppRouter } from './app.router';
@@ -30,7 +31,7 @@ import { SharedModule } from '@app/shared';
    imports: [
       AppRouter,
       BrowserModule,
-      // EgeoModule.forRoot(),
+      EgeoModule.forRoot(),
       HttpModule,
       SharedModule,
       TranslateModule.forRoot(TRANSLATE_CONFIG)

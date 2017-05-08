@@ -23,20 +23,20 @@ const layoutRoutes:Routes = [
    {
       path: '',
       component: LayoutComponent,
-      // children: [
-      //    {
-      //       path: '',
-      //       redirectTo: 'resources'
-      //    },
-      //    {
-      //       path: 'resources',
-      //       loadChildren: '../../modules/resources/resources.module#ResourcesModule'
-      //    },
-      //    {
-      //       path: 'examples',
-      //       loadChildren: '../../modules/examples/examples.module#ExamplesModule'
-      //    }
-      // ]
+      children: [
+         {
+            path: '',
+            redirectTo: 'resources'
+         },
+         {
+            path: 'resources',
+            loadChildren: '@app/resources/resources.module#ResourcesModule'
+         },
+         {
+            path: 'examples',
+            loadChildren: '@app/examples/examples.module#ExamplesModule'
+         }
+      ]
    }
 ];
 

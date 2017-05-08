@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (C) 2016 Stratio (http://stratio.com)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-$egeo-sanitize: true;
-$egeo-grid: true;
-
-@import '~@stratio/egeo-ui-base/utils/typography';
-@import '~@stratio/egeo-ui-base/vendors/sanitize';
-@import '~@stratio/egeo-ui-base/utils/grid';
+export * from './examples.component';
+export * from './examples.module';
+export * from './examples-routing.module';
+export * from './dropdownExample.component';
+export * from './formExample.component';
+export * from './radioMenuExample.component';

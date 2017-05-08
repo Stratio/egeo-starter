@@ -18,6 +18,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
+   encapsulation: ViewEncapsulation.None,
    selector: 'st-app',
    styleUrls: [ './app.styles.scss' ],
    templateUrl: './app.template.html'

@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (C) 2016 Stratio (http://stratio.com)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +14,17 @@
  * limitations under the License.
  */
 
-$egeo-sanitize: true;
-$egeo-grid: true;
+import {Component, Input} from '@angular/core';
 
-@import '~@stratio/egeo-ui-base/utils/typography';
-@import '~@stratio/egeo-ui-base/vendors/sanitize';
-@import '~@stratio/egeo-ui-base/utils/grid';
+@Component({
+   selector: 'info-card-example',
+   templateUrl: 'infoCardExample.template.html'
+})
+
+export class InfoCardExampleComponent {
+   @Input() photo: string;
+   @Input() title: string;
+   @Input() description: string;
+
+   constructor() { }
+}

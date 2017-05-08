@@ -16,4 +16,11 @@
 
 -->
 
-<router-outlet></router-outlet>
+<section class="container-liquid">
+   <st-radio-menu [activeOption]="selectedOption"
+                  class="radio-menu"
+                  [options]="options"
+                  (changedOption)="changedOption($event)"
+                  qaTag="radio-menu-without-theme">
+   </st-radio-menu>
+</section>

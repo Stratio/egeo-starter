@@ -16,4 +16,15 @@
 
 -->
 
-<router-outlet></router-outlet>
+<st-dropdown button="Select an option"
+             [items]="itemsDropdown"
+             (click)="onClickDropdown($event)"
+             (change)="onItemChange($event)"
+             qaTag="dropdown-example">
+</st-dropdown>
+
+<br /><br />
+
+<st-dropdown-menu active="true"
+                  [items]="itemsWithIcon">
+</st-dropdown-menu>

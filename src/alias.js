@@ -19,7 +19,7 @@
 const appModules = {
    '@app/core': 'app/modules/core',
    '@app/errors': 'app/modules/errors',
-   '@app/example': 'app/modules/examples',
+   '@app/examples': 'app/modules/examples',
    '@app/layout': 'app/modules/layout',
    '@app/resources': 'app/modules/resources',
    '@app/shared': 'app/modules/shared'

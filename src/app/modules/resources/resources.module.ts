@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (C) 2016 Stratio (http://stratio.com)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +14,25 @@
  * limitations under the License.
  */
 
-$egeo-sanitize: true;
-$egeo-grid: true;
+import { NgModule } from '@angular/core';
 
-@import '~@stratio/egeo-ui-base/utils/typography';
-@import '~@stratio/egeo-ui-base/vendors/sanitize';
-@import '~@stratio/egeo-ui-base/utils/grid';
+import {
+   ResourcesComponent, ResourcesRoutingModule, InfoCardExampleComponent
+} from '.';
+import { SharedModule } from '@app/shared';
+import { EgeoModule } from '@stratio/egeo';
+
+@NgModule({
+   declarations: [
+      ResourcesComponent,
+      InfoCardExampleComponent
+   ],
+   imports: [
+      EgeoModule,
+      ResourcesRoutingModule,
+      SharedModule
+   ]
+})
+
+export class ResourcesModule {
+}

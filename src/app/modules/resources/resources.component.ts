@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (C) 2016 Stratio (http://stratio.com)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +14,17 @@
  * limitations under the License.
  */
 
-$egeo-sanitize: true;
-$egeo-grid: true;
+import { Component } from '@angular/core';
 
-@import '~@stratio/egeo-ui-base/utils/typography';
-@import '~@stratio/egeo-ui-base/vendors/sanitize';
-@import '~@stratio/egeo-ui-base/utils/grid';
+@Component({
+   styleUrls: [ 'resources.styles.scss' ],
+   templateUrl: 'resources.template.html'
+})
+
+export class ResourcesComponent {
+   public title: string;
+
+   constructor() {
+      this.title = 'Resources';
+   }
+}

@@ -21,6 +21,10 @@ import { Error404Component } from '@app/errors';
 
 const appRoutes:Routes = [
    {
+      path: '',
+      loadChildren: './modules/layout/layout.module#LayoutModule'
+   },
+   {
       path: '**',
       component: Error404Component
    }

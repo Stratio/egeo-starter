@@ -16,7 +16,7 @@
 
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-// import { EgeoModule } from '@stratio/egeo';
+import { EgeoModule } from '@stratio/egeo';
 
 import { LayoutComponent, LayoutRouter } from '.';
 import { SharedModule } from '@app/shared';
@@ -26,6 +26,7 @@ import { SharedModule } from '@app/shared';
       LayoutComponent
    ],
    imports: [
+      EgeoModule,
       FormsModule,
       LayoutRouter,
       SharedModule
