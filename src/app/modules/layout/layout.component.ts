@@ -15,7 +15,6 @@
  */
 
 import { Component, ChangeDetectorRef } from '@angular/core';
-
 import { StHeaderModel, StFooterLink } from '@stratio/egeo';
 
 @Component({
@@ -57,7 +56,7 @@ export class LayoutComponent {
          },
          {
             title: 'Egeo doc',
-            url: 'http://stratiodocs.s3-website-us-east-1.amazonaws.com/egeo/1.0.0'
+            url: 'https://stratio.github.io/egeo-web/2.0.1/#/main'
          }
       ];
    }

@@ -16,8 +16,8 @@
 
 import { NgModule } from '@angular/core';
 
-import { errorsComponents } from '@starter/errors';
-import { SharedModule } from '@starter/shared';
+import { errorsComponents } from '@app/errors';
+import { SharedModule } from '@app/shared';
 
 @NgModule({
    declarations: [

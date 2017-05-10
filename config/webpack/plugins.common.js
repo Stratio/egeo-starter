@@ -14,10 +14,21 @@
  * limitations under the License.
  */
 
-let entry = {
-   'app': './src/main.dev.ts',
-   'polyfills': './src/polyfills.ts',
-   'vendor': './src/vendor.ts'
-};
+'use strict';
 
-module.exports = entry;
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const NgToolsWebpack = require('@ngtools/webpack');
+
+let plugins = [
+   new ExtractTextPlugin('styles.css'),
+   new HtmlWebpackPlugin({
+      template: './src/index.html'
+   }),
+   new NgToolsWebpack.AotPlugin({
+      tsConfigPath: './tsconfig.json',
+      mainPath: "./src/main.ts"
+   })
+];
+
+module.exports = plugins;

@@ -16,31 +16,29 @@
 
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { TranslateModule } from 'ng2-translate';
+import { HttpModule } from '@angular/http';
+import { TranslateModule } from '@ngx-translate/core';
 import { EgeoModule } from '@stratio/egeo';
 
-import { AppComponent, AppRoutingModule, TRANSLATE_CONFIG } from '.';
-import { SharedModule } from '@starter/shared';
-import { ErrorsModule } from '@starter/errors';
+import { AppComponent } from './app.component';
+import { AppRouter } from './app.router';
+import { ConfigService, INITIALIZER, TRANSLATE_CONFIG } from '@app/core';
+import { SharedModule } from '@app/shared';
 
 @NgModule({
    bootstrap: [ AppComponent ],
-   declarations: [
-      AppComponent
-   ],
+   declarations: [ AppComponent ],
    imports: [
-      AppRoutingModule,
+      AppRouter,
       BrowserModule,
-      BrowserAnimationsModule,
       EgeoModule.forRoot(),
-      ErrorsModule,
-      TranslateModule.forRoot(TRANSLATE_CONFIG),
-      SharedModule
+      HttpModule,
+      SharedModule,
+      TranslateModule.forRoot(TRANSLATE_CONFIG)
    ],
-   exports: [
-      ErrorsModule,
-      SharedModule
+   providers: [
+      ConfigService,
+      INITIALIZER
    ]
 })
 

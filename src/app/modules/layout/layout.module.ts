@@ -18,8 +18,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { EgeoModule } from '@stratio/egeo';
 
-import { LayoutComponent, LayoutRoutingModule } from '.';
-import { SharedModule } from '@starter/shared';
+import { LayoutComponent, LayoutRouter } from '.';
+import { SharedModule } from '@app/shared';
 
 @NgModule({
    declarations: [
@@ -28,7 +28,7 @@ import { SharedModule } from '@starter/shared';
    imports: [
       EgeoModule,
       FormsModule,
-      LayoutRoutingModule,
+      LayoutRouter,
       SharedModule
    ]
 })

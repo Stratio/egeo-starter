@@ -14,15 +14,11 @@
  * limitations under the License.
  */
 
-const helpers = require('../helpers');
+'use strict';
 
-let output = {
-   chunkFilename: '[id].chunk.js',
-   filename: '[name].js',
-   library: 'ac_[name]',
-   libraryTarget: 'var',
-   path: helpers.root('dist'),
-   sourceMapFilename: '[name].map'
+let entry = {
+   main: './src/main.ts',
+   polyfills: './src/polyfills.ts'
 };
 
-module.exports = output;
+module.exports = entry;

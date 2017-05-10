@@ -14,16 +14,13 @@
  * limitations under the License.
  */
 
-import '@angular/platform-browser';
-import '@angular/platform-browser-dynamic';
-import '@angular/core';
-import '@angular/common';
-import '@angular/forms';
-import '@angular/http';
-import '@angular/router';
+'use strict';
 
-import 'rxjs';
+const path = require('path');
 
-// Global styles
-import '@stratio/egeo-theme/egeo-theme-stratio.css';
-import 'flexboxgrid/css/flexboxgrid.css';
+let output = {
+   filename: "[name].[hash].js",
+   path: path.join(process.cwd(), 'dist')
+};
+
+module.exports = output;

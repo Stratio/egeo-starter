@@ -17,12 +17,12 @@
 // 'app/modules/*' routes are configured to be recognized by tsconfig.json
 // for any other route it is needed to be added to tsconfig.json too
 const appModules = {
-   '@starter/core': 'app/modules/core',
-   '@starter/errors': 'app/modules/errors',
-   '@starter/example': 'app/modules/examples',
-   '@starter/layout': 'app/modules/layout',
-   '@starter/resources': 'app/modules/resources',
-   '@starter/shared': 'app/modules/shared'
+   '@app/core': 'app/modules/core',
+   '@app/errors': 'app/modules/errors',
+   '@app/examples': 'app/modules/examples',
+   '@app/layout': 'app/modules/layout',
+   '@app/resources': 'app/modules/resources',
+   '@app/shared': 'app/modules/shared'
 };
 
 exports.appModules = function () {

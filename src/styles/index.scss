@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (C) 2016 Stratio (http://stratio.com)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,24 +14,6 @@
  * limitations under the License.
  */
 
-declare var ENV: string;
-declare var HMR: boolean;
-declare var System: SystemJS;
+@import '~@stratio/egeo-theme/egeo-theme-stratio.css';
 
-interface SystemJS {
-   import: (path?: string) => Promise<any>;
-}
-
-interface GlobalEnvironment {
-   ENV: string;
-   HMR: boolean;
-   SystemJS: SystemJS;
-   System: SystemJS;
-}
-
-interface ErrorStackTraceLimit {
-   stackTraceLimit: number;
-}
-
-interface ErrorConstructor extends ErrorStackTraceLimit { }
-interface Global extends GlobalEnvironment { }
+@import 'main.scss';

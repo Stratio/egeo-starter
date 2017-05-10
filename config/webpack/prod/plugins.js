@@ -14,25 +14,29 @@
  * limitations under the License.
  */
 
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+'use strict';
 
-import { Error404Component } from '@starter/errors';
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const webpack = require('webpack');
+const CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
 
-const appRoutes:Routes = [
-   {
-      path: '',
-      loadChildren: './modules/layout/layout.module#LayoutModule'
-   },
-   {
-      path: '**',
-      component: Error404Component
-   }
+const pluginsCommon = require('../plugins.common');
+
+let plugins = [
+   ...pluginsCommon,
+   new CopyWebpackPlugin([
+      { from: './src/assets', to: './assets' },
+      { from: './src/config.json' },
+      { from: './src/index.html' }
+   ]),
+   new CommonsChunkPlugin({
+      names: [
+         'polyfills'
+      ]
+   }),
+   new CommonsChunkPlugin({
+      async: true
+   })
 ];
 
-@NgModule({
-   exports: [ RouterModule ],
-   imports: [ RouterModule.forRoot(appRoutes) ]
-})
-
-export class AppRoutingModule { }
+module.exports = plugins;

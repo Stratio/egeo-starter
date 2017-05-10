@@ -20,24 +20,22 @@ switch (process.env.NODE_ENV) {
    case 'prod':
    case 'production':
       env = 'prod';
-      break;
-   case 'test':
-   case 'testing':
-      env = 'test';
 }
 
 let config = {
-   devServer: require('./config/webpack/dev-server'),
-   entry: require('./config/webpack/entry.'+env),
+   //context: path.join(process.cwd(), 'src'),
+   devServer: require('./config/webpack/dev-server.common'),
+   devtool: env === 'prod' ? 'source-map' : 'eval-source-map',
+   entry: require('./config/webpack/entry.common'),
    module: {
-      rules: require('./config/webpack/rules')
+      rules: require('./config/webpack/rules.common')
    },
    performance: {
       hints: false
    },
-   output: require('./config/webpack/output'),
-   plugins: require('./config/webpack/plugins'),
-   resolve: require('./config/webpack/resolve')
+   output: require('./config/webpack/'+env+'/output'),
+   plugins: require('./config/webpack/'+env+'/plugins'),
+   resolve: require('./config/webpack/resolve.common')
 };
 
 module.exports = config;

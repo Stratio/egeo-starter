@@ -30,11 +30,11 @@ const layoutRoutes:Routes = [
          },
          {
             path: 'resources',
-            loadChildren: '../../modules/resources/resources.module#ResourcesModule'
+            loadChildren: '@app/resources/resources.module#ResourcesModule'
          },
          {
             path: 'examples',
-            loadChildren: '../../modules/examples/examples.module#ExamplesModule'
+            loadChildren: '@app/examples/examples.module#ExamplesModule'
          }
       ]
    }
@@ -49,4 +49,4 @@ const layoutRoutes:Routes = [
    ]
 })
 
-export class LayoutRoutingModule { }
+export class LayoutRouter { }

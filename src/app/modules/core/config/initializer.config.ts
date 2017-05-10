@@ -14,7 +14,16 @@
  * limitations under the License.
  */
 
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { AppModule } from './app/app.module';
+import { APP_INITIALIZER } from '@angular/core';
+import { ConfigService } from "@app/core";
 
-platformBrowserDynamic().bootstrapModule(AppModule);
+export function getConfigJson(config:ConfigService):any {
+   return () => config.load('config.json');
+}
+
+export const INITIALIZER:any = {
+   provide: APP_INITIALIZER,
+   useFactory: getConfigJson,
+   deps: [ ConfigService ],
+   multi: true
+};

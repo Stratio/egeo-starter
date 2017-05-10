@@ -20,7 +20,7 @@ import {
    ExamplesComponent, ExamplesRoutingModule, FormExampleComponent,
    DropdownExampleComponent, RadioMenuExample
 } from '.';
-import { SharedModule } from '@starter/shared';
+import { SharedModule } from '@app/shared';
 import { ReactiveFormsModule } from '@angular/forms';
 import { EgeoModule } from '@stratio/egeo';
 

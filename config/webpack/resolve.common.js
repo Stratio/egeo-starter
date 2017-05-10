@@ -14,10 +14,18 @@
  * limitations under the License.
  */
 
-let entry = {
-   'app': './src/main.ts',
-   'polyfills': './src/polyfills.ts',
-   'vendor': './src/vendor.ts'
+'use strict';
+
+const path = require('path');
+const alias = require(path.resolve(process.cwd(), 'src/alias'));
+
+let resolve = {
+   alias: alias.appModules(),
+   extensions: ['.ts', '.js'],
+   modules: [
+      path.resolve(process.cwd(), 'node_modules'),
+      path.resolve(process.cwd(), 'src')
+   ]
 };
 
-module.exports = entry;
+module.exports = resolve;

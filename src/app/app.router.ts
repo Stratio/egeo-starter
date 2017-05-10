@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (C) 2016 Stratio (http://stratio.com)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,3 +13,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+
+import { Error404Component } from '@app/errors';
+
+const appRoutes:Routes = [
+   {
+      path: '',
+      loadChildren: './modules/layout/layout.module#LayoutModule'
+   },
+   {
+      path: '**',
+      component: Error404Component
+   }
+];
+
+@NgModule({
+   exports: [
+      RouterModule
+   ],
+   imports: [
+      RouterModule.forRoot(appRoutes, { enableTracing: true })
+   ]
+})
+
+export class AppRouter { }

@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (C) 2016 Stratio (http://stratio.com)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,3 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+'use strict';
+
+let devServer = {
+   clientLogLevel: 'warning',
+   contentBase: './src',
+   historyApiFallback: true,
+   host: process.env.HOST || 'localhost',
+   port: process.env.PORT || 3000,
+   stats: 'errors-only'
+};
+
+module.exports = devServer;

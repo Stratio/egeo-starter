@@ -14,20 +14,18 @@
  * limitations under the License.
  */
 
-const helpers = require('../helpers');
+import { Http } from '@angular/http';
+import { TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
-let devServer = {
-   clientLogLevel: "warning",
-   historyApiFallback: true,
-   host: process.env.HOST || 'localhost',
-   port: process.env.PORT || 3000,
-   proxy: {
-      '/api': {
-         target: 'http://localhost:9000/',
-         secure: false
-      }
-   },
-   stats: "errors-only"
+export function createTranslateLoader(http:Http):any {
+   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
+
+export const TRANSLATE_CONFIG:any = {
+   loader: {
+      provide: TranslateLoader,
+      useFactory: (createTranslateLoader),
+      deps: [ Http ]
+   }
 };
-
-module.exports = devServer;

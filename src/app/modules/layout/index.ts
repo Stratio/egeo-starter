@@ -15,4 +15,4 @@
  */
 
 export * from './layout.component';
-export * from './layout-routing.module';
+export * from './layout.router';

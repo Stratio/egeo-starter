@@ -14,17 +14,6 @@
  * limitations under the License.
  */
 
-const helpers = require('../helpers');
-
-const alias = require(helpers.root('src/alias'));
-
-let resolve = {
-   alias: alias.appModules(),
-   extensions: ['.js', '.ts'],
-   modules: [
-      helpers.root('node_modules'),
-      helpers.root('src')
-   ]
-};
-
-module.exports = resolve;
+export * from './config/config.service';
+export * from './config/initializer.config';
+export * from './config/translate.config';
