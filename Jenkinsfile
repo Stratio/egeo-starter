@@ -8,22 +8,9 @@ hose {
    DEVTIMEOUT = 30
    RELEASETIMEOUT = 30
 
-   PKGMODULESNAMES = ['egeo-starter']
-
    DEV = { config ->
       doCompile(config)
       doUT(config)
-      doPackage(config)
-      parallel(
-         QC: {
-            doStaticAnalysis(config)
-         },
-         DEPLOY: {
-            doDeploy(config)
-         },
-         DOCKER: {
-            doDocker(config)
-         }
-      )
+      doDocker(config)
    }
 }

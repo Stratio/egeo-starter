@@ -69,6 +69,16 @@
                   </configuration>
                </execution>
                <execution>
+                  <id>replace version</id>
+                  <goals>
+                     <goal>npm</goal>
+                  </goals>
+                  <phase>generate-sources</phase>
+                  <configuration>
+                     <arguments>version --no-git-tag-version ${version}</arguments>
+                  </configuration>
+               </execution>
+               <execution>
                   <id>npm build</id>
                   <goals>
                      <goal>npm</goal>
