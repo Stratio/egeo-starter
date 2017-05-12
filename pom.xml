@@ -9,7 +9,7 @@
 
    <groupId>com.stratio.egeo.starter</groupId>
    <artifactId>egeo-starter</artifactId>
-   <version>0.1.0-SNAPSHOT</version>
+   <version>0.1.0-RC1</version>
 
    <name>Stratio Egeo Starter</name>
    <description>Stratio Egeo starter for angular2, typescript and webpack project</description>
