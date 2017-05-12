@@ -1,10 +1,6 @@
 # Changelog
 
-## 0.2.0 (upcoming)
-
-* Pending changelog
-
-## 0.1.0 (May 12, 2017)
+## 0.1.0 (upcoming)
 
 * Base project using:
   * Angular 4.1.1
