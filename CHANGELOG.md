@@ -4,7 +4,7 @@
 
 * Pending changelog
 
-## 0.1.0 (upcoming)
+## 0.1.0 (May 12, 2017)
 
 * Base project using:
   * Angular 4.1.1
