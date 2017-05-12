@@ -1,6 +1,6 @@
 {
   "name": "egeo-starter",
-  "version": "0.1.0-RC1",
+  "version": "0.1.0",
   "license": "Apache-2.0",
   "description": "Egeo Starter kit featuring Angular 2, Karma, Protractor, Jasmine, Istanbul, TypeScript, and Webpack 2",
   "author": "Stratio",
