@@ -8,6 +8,8 @@ hose {
    DEVTIMEOUT = 30
    RELEASETIMEOUT = 30
 
+   PKGMODULESNAMES = ['egeo-starter']
+
    DEV = { config ->
       doCompile(config)
       doUT(config)
