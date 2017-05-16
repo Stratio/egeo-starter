@@ -2,7 +2,7 @@
 
 ## 0.2.0 (upcoming)
 
-* Pending changelog
+* Add karma coverage configuration
 
 ## 0.1.0 (May 12, 2017)
 
