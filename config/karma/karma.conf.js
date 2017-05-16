@@ -52,7 +52,14 @@ module.exports = function(config) {
             }
          },
          coverageOptions: {
+            exclude: /(\.d|\.spec|\.module|barrels|public_api)\.ts/i,
             instrumentation: true
+         },
+         reports: {
+            'text-summary': null,
+            'html': './target/coverage/html',
+            'json': './target/coverage',
+            'lcovonly': './target/lcovUT.info'
          }
       },
       logLevel: config.LOG_INFO,
