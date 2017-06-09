@@ -17,9 +17,13 @@
 'use strict';
 
 const webpack = require('webpack');
+const DefinePlugin = require('webpack/lib/DefinePlugin');
 const CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
+const helpers = require('../helpers');
 
 const pluginsCommon = require('../plugins.common');
+
+const HMR = helpers.hasProcessFlag('hot');
 
 let plugins = [
    ...pluginsCommon,
@@ -27,6 +31,9 @@ let plugins = [
       names: [
          'polyfills'
       ]
+   }),
+   new DefinePlugin({
+      'HMR': HMR
    })
 ];
 

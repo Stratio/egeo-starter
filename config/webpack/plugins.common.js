@@ -18,16 +18,23 @@
 
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const NgToolsWebpack = require('@ngtools/webpack');
+const webpack = require('webpack');
+const CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
+
+
 
 let plugins = [
    new ExtractTextPlugin('styles.css'),
    new HtmlWebpackPlugin({
       template: './src/index.html'
    }),
-   new NgToolsWebpack.AotPlugin({
-      tsConfigPath: './tsconfig.json',
-      mainPath: "./src/main.ts"
+   new CommonsChunkPlugin({
+      names: [
+         'polyfills'
+      ]
+   }),
+   new CommonsChunkPlugin({
+      async: true
    })
 ];
 

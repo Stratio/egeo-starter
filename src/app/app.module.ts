@@ -1,3 +1,4 @@
+
 /*
  * Copyright (C) 2016 Stratio (http://stratio.com)
  *
@@ -14,7 +15,8 @@
  * limitations under the License.
  */
 
-import { NgModule } from '@angular/core';
+import { NgModule, ApplicationRef} from '@angular/core';
+import { AppStore } from './app.store';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { TranslateModule } from '@ngx-translate/core';
@@ -23,11 +25,13 @@ import { EgeoModule } from '@stratio/egeo';
 import { AppComponent } from './app.component';
 import { AppRouter } from './app.router';
 import { ConfigService, INITIALIZER, TRANSLATE_CONFIG } from '@app/core';
+import { removeNgStyles, createNewHosts, createInputTransfer, bootloader } from '@angularclass/hmr';
 import { SharedModule } from '@app/shared';
+import { Error404Component } from '@app/errors/error-404/error-404.component';
 
 @NgModule({
    bootstrap: [ AppComponent ],
-   declarations: [ AppComponent ],
+   declarations: [ AppComponent, Error404Component ],
    imports: [
       AppRouter,
       BrowserModule,
@@ -38,8 +42,38 @@ import { SharedModule } from '@app/shared';
    ],
    providers: [
       ConfigService,
+      AppStore,
       INITIALIZER
    ]
 })
 
-export class AppModule { }
+export class AppModule { 
+
+constructor(public appRef: ApplicationRef, public appStore: AppStore) {}
+  hmrOnInit(store: any) {
+    if (!store || !store.state) { return; }
+    console.log('HMR store', JSON.stringify(store, null, 2));
+    // restore state
+    this.appStore.setState(store.state);
+    // restore input values
+    if ('restoreInputValues' in store) { store.restoreInputValues(); }
+    this.appRef.tick();
+    Object.keys(store).forEach(prop => delete store[prop]);
+  }
+  hmrOnDestroy(store: any) {
+    const cmpLocation = this.appRef.components.map(cmp => cmp.location.nativeElement);
+    const currentState = this.appStore.getState();
+    store.state = currentState;
+    // recreate elements
+    store.disposeOldHosts = createNewHosts(cmpLocation);
+    // save input values
+    store.restoreInputValues  = createInputTransfer();
+    // remove styles
+    removeNgStyles();
+  }
+  hmrAfterDestroy(store: any) {
+    // display new elements
+    store.disposeOldHosts();
+    delete store.disposeOldHosts;
+  }
+}

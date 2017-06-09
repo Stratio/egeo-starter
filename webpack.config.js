@@ -28,7 +28,7 @@ let config = {
    devtool: env === 'prod' ? 'source-map' : 'eval-source-map',
    entry: require('./config/webpack/entry.common'),
    module: {
-      rules: require('./config/webpack/rules.common')
+      rules: require('./config/webpack/'+env+'/rules')
    },
    performance: {
       hints: false
