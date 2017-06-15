@@ -14,16 +14,10 @@
  * limitations under the License.
  */
 
-import './styles/index.scss';
+var path = require('path');
 
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { bootloader } from '@angularclass/hmr';
-import { AppModule } from './app/app.module';
-
-export function main(): Promise<any> {
-   return platformBrowserDynamic()
-      .bootstrapModule(AppModule)
-      .catch((err: string) => console.error(err));
+function hasProcessFlag(flag) {
+  return process.argv.join('').indexOf(flag) > -1;
 }
 
-bootloader(main);
+exports.hasProcessFlag = hasProcessFlag;

@@ -14,18 +14,17 @@
  * limitations under the License.
  */
 
-import { NgModule } from '@angular/core';
+'use strict';
 
-import { errorsComponents } from '@app/errors';
-import { SharedModule } from '@app/shared';
+const rulesCommon = require('../rules.common');
 
-@NgModule({
-   declarations: [
-      ...errorsComponents
-   ],
-   imports: [
-      SharedModule
-   ]
-})
+let rules = [
+    {
+      exclude: [/\.(spec|e2e)\.ts$/],
+      test: /\.ts$/,
+      use: '@ngtools/webpack'
+   },
+   ...rulesCommon
+];
 
-export class ErrorsModule { }
+module.exports = rules;
