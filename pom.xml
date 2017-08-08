@@ -12,7 +12,7 @@
    <version>0.3.0-SNAPSHOT</version>
 
    <name>Stratio Egeo Starter</name>
-   <description>Stratio Egeo starter for angular2, typescript and webpack project</description>
+   <description>Stratio Egeo starter for angular2+ using angular-cli</description>
    <inceptionYear>2016</inceptionYear>
    <packaging>pom</packaging>
 

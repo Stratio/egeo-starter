@@ -19,24 +19,24 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { Error404Component } from '@app/errors/error-404/error-404.component';
 
-const appRoutes:Routes = [
-   {
-      path: '',
-      loadChildren: './modules/layout/layout.module#LayoutModule'
-   },
-   {
-      path: '**',
-      component: Error404Component
-   }
+const appRoutes: Routes = [
+  {
+    path: '',
+    loadChildren: './modules/layout/layout.module#LayoutModule'
+  },
+  {
+    path: '**',
+    component: Error404Component
+  }
 ];
 
 @NgModule({
-   exports: [
-      RouterModule
-   ],
-   imports: [
-      RouterModule.forRoot(appRoutes, { enableTracing: true })
-   ]
+  exports: [
+    RouterModule
+  ],
+  imports: [
+    RouterModule.forRoot(appRoutes, { enableTracing: true })
+  ]
 })
 
 export class AppRouter { }

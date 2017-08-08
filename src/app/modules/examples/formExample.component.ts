@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { StInputError } from '@stratio/egeo';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
@@ -23,18 +23,18 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
    templateUrl: 'formExample.template.html'
 })
 
-export class FormExampleComponent {
+export class FormExampleComponent implements OnInit {
    public model: FormModel = {
       name: 'Egeo',
       description: '',
       components: 10
    };
 
-   public textWithoutSpaces: string = '[a-z]*';
-   public minLength: number = 3;
-   public isDisabled: boolean = false;
+   public textWithoutSpaces = '[a-z]*';
+   public minLength = 3;
+   public isDisabled = false;
 
-   public forceValidations: boolean = false;
+   public forceValidations = false;
 
    public errors: StInputError = {
       generic: 'Error',

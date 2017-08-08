@@ -24,24 +24,24 @@ import { Http, Response } from '@angular/http';
 @Injectable()
 export class ConfigService {
 
-   private _config:any;
+   private _config: any;
 
-   constructor(private http:Http) { }
+   constructor(private http: Http) { }
 
-   get config():any {
+   get config(): any {
       return this._config;
    }
 
-   set config(data:any) {
+   set config(data: any) {
       this._config = data;
    }
 
-   load(url:string):Promise<any> {
+   load(url: string): Promise<any> {
       return this.http
          .get(url)
-         .map((res:Response) => res.json())
+         .map((res: Response) => res.json())
          .toPromise()
-         .then((data:any) => this.config = data)
-         .catch((err:any) => Promise.resolve());
+         .then((data: any) => this.config = data)
+         .catch((err: any) => Promise.resolve());
    }
 }

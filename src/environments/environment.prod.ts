@@ -13,25 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-'use strict';
-
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const NgToolsWebpack = require('@ngtools/webpack');
-
-const pluginsCommon = require('../plugins.common');
-
-let plugins = [
-   ...pluginsCommon,
-    new NgToolsWebpack.AotPlugin({
-      tsConfigPath: './tsconfig.json',
-      mainPath: "./src/main.ts"
-   }),
-   new CopyWebpackPlugin([
-      { from: './src/assets', to: './assets' },
-      { from: './src/config.json' },
-      { from: './src/index.html' }
-   ])
-];
-
-module.exports = plugins;
+export const environment = {
+  production: true
+};

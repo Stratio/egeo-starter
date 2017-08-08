@@ -1,29 +1,45 @@
-# IDEs
-.history/
-.idea/
-.vscode/
+# See http://help.github.com/ignore-files/ for more about ignoring files.
 
-# dist
-dist/
-target
+# compiled output
+/dist
+/tmp
+/out-tsc
 
-# Node
-node/
-node_modules/
+# dependencies
+/node_modules
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
 npm-debug.log
-.npmrc
+testem.log
+/typings
+yarn-error.log
+yarn.lock
+package-lock.json
 
-# OS metadata
+# e2e
+/e2e/*.js
+/e2e/*.map
+
+# System Files
 .DS_Store
 Thumbs.db
-
-# Node
-node_modules/
-npm-debug.log
-.npmrc
-
-# Karma
-coverage/
-
-# Yarn
-yarn.lock

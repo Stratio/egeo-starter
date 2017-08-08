@@ -1,9 +1,11 @@
 #!/bin/sh
 
+BASE_PATH=${BASE_PATH:="/"}
+
 sed -i "s|\"API_URL\":.*|\"API_URL\":\"${HOST:=localhost:9000}\"|"  ${CONF_PATH:=/usr/share/www/config.json}
+sed -i 's#<base href="\/">#<base href="'"${BASE_PATH}"'">#g' /usr/share/www/index.html
 
-echo "Starting nginx... Egeo Starter should running on port 8080"
-
+printf "Starting nginx... Egeo Starter should running...\n * App port: 8080\n * Api url:${API_URL} \n"
 nginx
 
 echo "Pulling log"

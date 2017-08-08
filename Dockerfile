@@ -1,4 +1,5 @@
 FROM alpine:3.5
+MAINTAINER Stratio <front@stratio.com>
 
 ARG VERSION
 ARG COMMITID
@@ -17,7 +18,7 @@ COPY docker/nginx.conf /etc/nginx/nginx.conf
 
 RUN chmod 755 /docker_entrypoint
 
-EXPOSE 8080
+EXPOSE 80
 
 ENTRYPOINT ["/docker_entrypoint"]
 

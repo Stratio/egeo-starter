@@ -22,9 +22,9 @@ import { StRadioMenuOption } from '@stratio/egeo';
    changeDetection: ChangeDetectionStrategy.OnPush
 })
 
-export class RadioMenuExample {
-   options:Array<StRadioMenuOption>;
-   selectedOption:StRadioMenuOption;
+export class RadioMenuExampleComponent {
+   options: Array<StRadioMenuOption>;
+   selectedOption: StRadioMenuOption;
 
    constructor() {
       this.options = [
@@ -44,6 +44,6 @@ export class RadioMenuExample {
    }
 
    public changedOption(item: StRadioMenuOption): void {
-      console.log("item", item);
+      console.log('item', item);
    }
 }

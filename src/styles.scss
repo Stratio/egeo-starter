@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (C) 2016 Stratio (http://stratio.com)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,19 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+@import '~@stratio/egeo-theme/egeo-theme-stratio.css';
 
-'use strict';
-
-const path = require('path');
-const alias = require(path.resolve(process.cwd(), 'src/alias'));
-
-let resolve = {
-   alias: alias.appModules(),
-   extensions: ['.ts', '.js'],
-   modules: [
-      path.resolve(process.cwd(), 'node_modules'),
-      path.resolve(process.cwd(), 'src')
-   ]
-};
-
-module.exports = resolve;
+html,
+body {
+   min-height: 100%;
+   width: 100%;
+}

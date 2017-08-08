@@ -25,8 +25,8 @@ import { TranslateService } from '@ngx-translate/core';
 })
 
 export class AppComponent {
-   constructor(translate:TranslateService) {
-      let lang:string = navigator.language.split('-')[0];
+   constructor(translate: TranslateService) {
+      let lang: string = navigator.language.split('-')[0];
       lang = /(es|en)/gi.test(lang) ? lang : 'en';
       translate.setDefaultLang('en');
       translate.use(lang);

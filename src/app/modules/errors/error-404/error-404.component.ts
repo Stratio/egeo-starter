@@ -22,6 +22,6 @@ import { ConfigService } from '@app/core';
 })
 
 export class Error404Component {
-   public config:any = JSON.stringify(this.configService.config.API_URL);
-   constructor(public configService:ConfigService) { }
+   public config: any = JSON.stringify(this.configService.config.API_URL);
+   constructor(public configService: ConfigService) { }
 }
