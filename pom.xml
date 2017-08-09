@@ -22,9 +22,8 @@
    </issueManagement>
 
    <properties>
-      <nodeVer>v6.9.2</nodeVer>
-      <npmVer>4.6.1</npmVer>
-      <nodeURL>http://tools.stratio.com/buildtools</nodeURL>
+      <nodeVer>v8.1.2</nodeVer>
+      <nodeURL>http://tools.stratio.com/buildtools/node/</nodeURL>
    </properties>
 
    <build>
@@ -51,9 +50,7 @@
                   <phase>validate</phase>
                   <configuration>
                      <nodeVersion>${nodeVer}</nodeVersion>
-                     <npmVersion>${npmVer}</npmVersion>
-                     <nodeDownloadRoot>${customnodeDownloadRoot}</nodeDownloadRoot>
-                     <npmDownloadRoot>${customnpmDownloadRoot}</npmDownloadRoot>
+                     <nodeDownloadRoot>${nodeURL}</nodeDownloadRoot>
                      <skip.installnodenpm>${skip.installnodenpm}</skip.installnodenpm>
                   </configuration>
                </execution>
@@ -64,8 +61,8 @@
                   </goals>
                   <phase>generate-sources</phase>
                   <configuration>
-                     <npmRegistryURL>${customnpmRegistryURL}</npmRegistryURL>
-                     <arguments>install --no-optional --loglevel=error --depth=0</arguments>
+                     <npmRegistryURL>http://sodio.stratio.com/repository/publicnpm/</npmRegistryURL>
+                     <arguments>install --loglevel=error --depth=0</arguments>
                   </configuration>
                </execution>
                <execution>
@@ -75,7 +72,7 @@
                   </goals>
                   <phase>generate-sources</phase>
                   <configuration>
-                     <arguments>version --no-git-tag-version --allow-same-version ${version}</arguments>
+                     <arguments>version --no-git-tag-version --allow-same-version ${project.version}</arguments>
                   </configuration>
                </execution>
                <execution>
@@ -118,14 +115,4 @@
          </plugin>
       </plugins>
    </build>
-   <profiles>
-      <profile>
-         <id>node</id>
-         <properties>
-            <customnodeDownloadRoot>${nodeURL}/node/</customnodeDownloadRoot>
-            <customnpmDownloadRoot>${nodeURL}/npm/${npmVer}/</customnpmDownloadRoot>
-            <customnpmRegistryURL>http://sodio.stratio.com/repository/publicnpm/</customnpmRegistryURL>
-         </properties>
-      </profile>
-   </profiles>
 </project>

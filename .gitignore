@@ -5,6 +5,10 @@
 /tmp
 /out-tsc
 
+# Maven
+/node
+/etc
+
 # dependencies
 /node_modules
 
@@ -16,6 +20,7 @@
 *.launch
 .settings/
 *.sublime-workspace
+.history
 
 # IDE - VSCode
 .vscode/*
@@ -23,6 +28,7 @@
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+
 
 # misc
 /.sass-cache
