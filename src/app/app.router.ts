@@ -19,7 +19,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { Error404Component } from '@app/errors/error-404/error-404.component';
 
-const appRoutes:Routes = [
+const appRoutes: Routes = [
    {
       path: '',
       loadChildren: './modules/layout/layout.module#LayoutModule'

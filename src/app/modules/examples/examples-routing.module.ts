@@ -19,7 +19,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { ExamplesComponent } from '.';
 
-const examplesRoutes:Routes = [
+const examplesRoutes: Routes = [
    {
       path: '',
       component: ExamplesComponent

@@ -13,28 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-'use strict';
-
-const webpack = require('webpack');
-const DefinePlugin = require('webpack/lib/DefinePlugin');
-const CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
-const helpers = require('../helpers');
-
-const pluginsCommon = require('../plugins.common');
-
-const HMR = helpers.hasProcessFlag('hot');
-
-let plugins = [
-   ...pluginsCommon,
-   new CommonsChunkPlugin({
-      names: [
-         'polyfills'
-      ]
-   }),
-   new DefinePlugin({
-      'HMR': HMR
-   })
-];
-
-module.exports = plugins;
+/* SystemJS module definition */
+declare var module: NodeModule;
+interface NodeModule {
+  id: string;
+}

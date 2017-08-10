@@ -19,7 +19,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { LayoutComponent } from '.';
 
-const layoutRoutes:Routes = [
+const layoutRoutes: Routes = [
    {
       path: '',
       component: LayoutComponent,

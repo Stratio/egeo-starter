@@ -17,8 +17,11 @@
 import { NgModule } from '@angular/core';
 
 import {
-   ExamplesComponent, ExamplesRoutingModule, FormExampleComponent,
-   DropdownExampleComponent, RadioMenuExample
+   ExamplesComponent,
+   ExamplesRoutingModule,
+   FormExampleComponent,
+   DropdownExampleComponent,
+   RadioMenuExampleComponent
 } from '.';
 import { SharedModule } from '@app/shared';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -29,7 +32,7 @@ import { EgeoModule } from '@stratio/egeo';
       DropdownExampleComponent,
       ExamplesComponent,
       FormExampleComponent,
-      RadioMenuExample
+      RadioMenuExampleComponent
    ],
    imports: [
       EgeoModule,

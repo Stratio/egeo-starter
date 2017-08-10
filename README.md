@@ -4,7 +4,7 @@
 
 # Egeo-starter
 
-egeo-starter is an starter for Angular 2 applications that includes the [Egeo Library of components](https://github.com/Stratio/egeo) developed by [Stratio](http://www.stratio.com). This starter is ready to work with AoT, HMR, DLL, Karma, Docker and much more, setting its strengths in performance, testing and deployment.
+egeo-starter is an starter for Angular 2+ applications that includes the [Egeo Library of components](https://github.com/Stratio/egeo) developed by [Stratio](http://www.stratio.com). This starter is ready to work with AoT, Karma, Docker, setting its strengths in performance, testing and deployment. This project is developed using [angular-cli](https://cli.angular.io/)
 
 It is even possible to connect dinamically the webapp with the server side through Docker configuration. Read about this feature and much more in [the wiki of the project](https://github.com/Stratio/egeo-starter/wiki).
 
@@ -18,7 +18,6 @@ But this is only a part of the Egeo project. Check the rest of our reports to kn
 ## Table of contents
 
 * [About this repo](#about-this-repo)
-* [File Structure](#file-structure)
 * [Getting Started](#getting-started)
    * [Dependencies](#dependencies)
    * [Installing](#installing)
@@ -26,68 +25,15 @@ But this is only a part of the Egeo project. Check the rest of our reports to kn
    * [How to run](#how-to-run)
    * [How to test](#how-to-test)
    * [How to build](#how-to-build)
+   * [How to run container](#How-to-run-container)
 * [Contributing](#contributing)
 * [License](#license)
 
 ## About this Repo
 
-This repo includes the whole needed to begin a new Angular 2 App, including unit testing platform with Karma, deploy environment with docker and the library of components of Egeo.
+This repo includes the whole needed to begin a new Angular 2+ App, including unit testing platform with Karma, deploy environment with docker and the library of components of Egeo all of them based on angular-cli development.
 
-We are also using [HMR](https://github.com/AngularClass/angular2-hmr) and [DLL](https://robertknight.github.io/posts/webpack-dll-plugins/) to dramatically speed your builds.
-
-* Documentation website (soon)
-
-## File Structure
-
-```
-egeo-starter/
- ├──config/                        * our configuration
- |   ├──karma/                     * karma configuration
- |   └──webpack/                   * webpack configuration
- |       ├──dev-server.js          * 
- |       ├──entry.dev.js           * 
- |       ├──entry.prod.js          * 
- |       ├──output.js              * 
- |       ├──plugins.js             * 
- |       ├──resolve.js             * 
- |       ├──rules.js               * 
- |       ├──webpack.dev.js         * specifical configuration for development environment
- |       ├──webpack.prod.js        * specifical configuration for production
- |       └──webpack.test.js        * specifical configuration for execute karma
- |   ├──empty.js                   * special file needed for webpack
- |   └──helpers.js                 * utilities file for webpack
- │
- ├──docker/                        * docker configuration
- |   ├──docker_entrypoint          * the docker entrypoint
- |   └──nginx.conf                 * nginx server configuration
- │
- ├──src/                           * code of the website
- |   ├──app/                       * the angular 2 app of the website
- |   ├──assets/                    * images, fonts and other static resources
- │   ├──alias.js                   * 
- │   ├──config.json                * here you can configure an URL for connect the app with an API
- │   ├──custom-typings.d.ts        * typing definitions for typescript
- |   ├──index.html                 * website entry point
- |   ├──main.dev.ts                * Angular 2 bootstrap
- |   ├──main.ts                    * bootloader of the webapp
- |   ├──polyfills.ts               * polyfills used by the webapp
- |   └──vendor.ts                  * load of the libraries needed
- │
- ├──.htmlhintrc                    * our htmlhint linting configuration
- ├──.sass-lint.yml                 * our sass linting configuration
- ├──tslint.json                    * typescript lint config
- ├──jenkinsfile                    * configuration of our jenkins process
- ├──Dockerfile                     * configuration of our docker process
- ├──karma.conf.js                  * index file for the karma configuration
- ├──pom.xml                        * configuration to work with our CI system
- ├──tsconfig.lib.json              * settings of typescript to build the library using webpack
- ├──tsconfig.gulp.json             * settings of typescript to build the library using gulp
- ├──tsconfig.json                  * default settings of typescript
- ├──package.json                   * what npm uses to manage it's dependencies
- ├──webpack.config.js              * entrypoint to the webpack configuration
- └──yarn.lock                      * need in order to get consistent installs across machines using yarn
-
-```
+* [Egeo Documentation website](http://egeo.stratio.com)
 
 ## Getting Started
 
@@ -95,19 +41,7 @@ egeo-starter/
 
 What you need to run this app:
 * [`node`](https://nodejs.org/es/) and `npm`
-* Ensure you're running the latest versions Node `v6.x.x` and NPM `3.x.x`+
-
-What your app will need to work with Egeo:
-* angular/common ~ 2.4.6",
-* angular/core ~ 2.4.6",
-* angular/forms ~ 2.4.6",
-* angular/http ~ 2.4.6",
-* angular/platform-browser-dynamic ~ 2.4.6",
-* angular/Router ~ 3.4.6
-* Lodash 4.17.4
-* Reflect Metadata ~ 0.1.9
-* Typescript 2.0.x
-* Angular2 Virtual Scroll ~ 0.1.3
+* Ensure you're running at least versions of Node `v6.x.x` and NPM `3.x.x`
 
 ### Installing
 
@@ -173,7 +107,7 @@ npm run test --component=st-two-list
 
 ### How to Build
 
-If you want to build a distributable package you must use the `build` command. This will create a **target** folder with the distributable code of the package.
+If you want to build a distributable package you must use the `build` command. This will create a **dist** folder with the distributable code of the package.
 
 ```
 yarn build
@@ -183,6 +117,14 @@ or
 
 ```
 npm run build
+```
+
+### How to run container
+
+If you want to build and run inside a docker container you must use the `startup.sh` script. This will create a **dist** folder with the distributable code of the package and copy inside a docker that run a nginx.
+
+```
+sh ./startup.sh
 ```
 
 ## Contributing

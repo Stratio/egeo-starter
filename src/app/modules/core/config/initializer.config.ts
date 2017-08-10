@@ -15,13 +15,13 @@
  */
 
 import { APP_INITIALIZER } from '@angular/core';
-import { ConfigService } from "@app/core";
+import { ConfigService } from '@app/core';
 
-export function getConfigJson(config:ConfigService):any {
+export function getConfigJson(config: ConfigService): any {
    return () => config.load('config.json');
 }
 
-export const INITIALIZER:any = {
+export const INITIALIZER: any = {
    provide: APP_INITIALIZER,
    useFactory: getConfigJson,
    deps: [ ConfigService ],

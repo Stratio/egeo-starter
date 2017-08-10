@@ -19,7 +19,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { ResourcesComponent } from '.';
 
-const resourcesRoutes:Routes = [
+const resourcesRoutes: Routes = [
    {
       path: '',
       component: ResourcesComponent

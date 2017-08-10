@@ -1,27 +1,25 @@
 {
-   "angularCompilerOptions": {
-      "genDir": "./dist/aot"
-   },
-   "buildOnSave": false,
    "compileOnSave": false,
    "compilerOptions": {
       "baseUrl": "./src",
+      "declaration": false,
       "emitDecoratorMetadata": true,
       "experimentalDecorators": true,
-      "lib": [ "es2015", "dom" ],
-      "mapRoot": "",
-      "module": "es2015",
+      "lib": [
+         "es2016",
+         "dom"
+      ],
       "moduleResolution": "node",
-      "noImplicitAny": true,
-      "outDir": "dist",
+      "outDir": "./dist/out-tsc",
       "paths": {
-         "@app/*": [ "app/modules/*" ]
+         "@app/*": [
+            "app/modules/*"
+         ]
       },
-      "rootDir": ".",
-      "skipLibCheck": true,
       "sourceMap": true,
       "target": "es5",
-      "types": [ "jasmine", "node" ]
-   },
-   "exclude": [ "dist", "node_modules" ]
+      "typeRoots": [
+         "node_modules/@types"
+      ]
+   }
 }
