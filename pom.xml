@@ -115,6 +115,7 @@
             <configuration>
                <header>${license.header}</header>
                <includes>
+                  <include>src/**</include>
                   <include>*.js</include>
               </includes>
             </configuration>
